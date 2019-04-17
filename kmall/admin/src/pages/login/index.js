@@ -1,5 +1,6 @@
 
 import React,{ Component } from 'react'
+// react-redux 里面的connect方法负责把store里面的数据和方法映射到UI组件
 import { connect } from 'react-redux'
 import axios from 'axios';
 import {
@@ -85,6 +86,12 @@ class NormalLoginForm extends Component {
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
 
+// 1.这个方法是connect的第一个参数
+// 2.connect方法会把整个应用的顶层数据(state)作为参数传递到这个方法
+// 3.整个应用的顶层数据(state)由创建store时传入的reducer生成,即src/store/reducer.js生成
+// 4.src/store/reducer.js里面的数据是由每一个组件自己的reducer合并而成
+// 5.因此state里面有每一个组件自己的数据
+// 6.该方法返回一个对象,这个对象的属性会映射到connect方法返回的方法指定的UI组件上的this.props上
 const mapStateToProps = (state)=>{
 	console.log(state);
 	return {
@@ -92,11 +99,17 @@ const mapStateToProps = (state)=>{
 	}
 }
 
+// 1.这个方法是connect的第二个参数
+// 2.connect方法会把store上的dispatch方法作为参数传递到这个方法
+// 3.该方法返回一个对象,这个对象的属性会映射到connect方法返回的方法指定的UI组件上的this.props上
+// 4.返回对象的属性对应的值是一个方法
 const mapDispatchToProps = (dispatch)=>{
 	return {
 
 	}
 }
 
-
+// 1.connect方法第一个参数指定映射数据的方法
+// 2.connect方法第一个参数指定映射方法的方法
+// 3.connect方法返回一个方法,这个方法用来指定UI组件,这个方法会返回一个容器组件
 export default connect(mapStateToProps,mapDispatchToProps)(WrappedNormalLoginForm);
