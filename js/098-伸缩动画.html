@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>098-伸缩动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 400px;
+			height: 100px;
+			background-color: pink;
+			/*margin-left: -400px;*/
+			position: absolute;
+			top: 0px;
+			left: -400px;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			/*margin-left: 400px;*/
+			position: absolute;
+			top: 0px;
+			right: -100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	var timer = 0;
+	var iSpeed = 0;
+	// 动画必要条件：
+	//1. 当前值
+	//2. 目标值
+	//3. 执行速度
+	//4. 动画结束条件
+	oBox.onmouseover = function(){
+		clearInterval(timer);
+		// oBox.style.left = '0px';
+		timer = setInterval(function(){
+			if (oBox.offsetLeft > 0) {
+				iSpeed = -7;
+			}else{
+				iSpeed = 7;
+			}
+			if (Math.abs(0-oBox.offsetLeft) < Math.abs(iSpeed)) {
+				oBox.style.left = '0px';
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpeed + 'px';
+			}
+			console.log(oBox.offsetLeft);
+		},30);
+	}
+	oBox.onmouseout = function(){
+		clearInterval(timer);
+		// oBox.style.left = '0px';
+		timer = setInterval(function(){
+			if (oBox.offsetLeft > -400) {
+				iSpeed = -7;
+			}else{ 
+				iSpeed = 7;
+			}
+			if (Math.abs(-400-oBox.offsetLeft) < Math.abs(iSpeed)) {
+				oBox.style.left = '-400px';
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpeed + 'px';
+			}
+			console.log(oBox.offsetLeft);
+		},30);
+	}
+</script>
+</html>

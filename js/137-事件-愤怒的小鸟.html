@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>137-事件-愤怒的小鸟 .html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -300px;
+			margin-left: -300px;
+			width: 600px;
+			height: 600px;
+			border: 1px solid #f67;
+			overflow: hidden;
+		}
+		#bird{
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -30px;
+			width: 60px;
+			height: 50px;
+			background-image: url(image/xiaoniao2.jpg);
+			background-repeat: no-repeat;
+			background-size: 50px;
+			background-position: center;
+		}
+		.topLine{
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			height: 200px;
+			width: 30px;
+			background-color: green;
+		}
+		.bottomLine{
+			position: absolute;
+			bottom: 0px;
+			left: 100%;
+			width: 30px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bird"></div>
+	</div>
+</body>
+<script>
+
+	function suiJi(min,max){
+		return Math.round(min + (max-min)*Math.random());
+	}
+
+	function pengzhuang(obj1,obj2){
+		if (obj1.offsetLeft + obj1.offsetWidth > obj2.offsetLeft
+			&& obj1.offsetTop + obj1.offsetHeight > obj2.offsetTop
+			&& obj1.offsetLeft < obj2.offsetWidth + obj2.offsetLeft
+			&& obj1.offsetTop < obj2.offsetTop + obj2.offsetHeight)
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	var oWrap = document.getElementById('wrap');
+	var oBird = document.getElementById('bird');
+	var moveBirdTimer = 0,addLineTimer = 0,lineLeftTimer = 0;
+	var iSpeed = 0;
+	var spaceHeight = 200;
+	var iSdie = false;
+
+	function addLine(){
+		var oTopLine = document.createElement('div'); 
+		var oBottomLine = document.createElement('div');
+		console.log(oTopLine);
+
+		oTopLine.className = 'topLine';
+		oBottomLine.className = 'bottomLine';
+
+		oWrap.appendChild(oTopLine);
+		oWrap.appendChild(oBottomLine);
+		oTopLine.leftData = 100;
+
+		var h = suiJi(100,300);
+
+		oTopLine.style.height = h + 'px';
+		oBottomLine.style.height = oWrap.offsetHeight-2 - spaceHeight - h + 'px';
+	}
+	clearInterval(addLineTimer);
+	addLineTimer = setInterval(addLine,500);
+
+	clearInterval(lineLeftTimer);
+	lineLeftTimer = setInterval(function(){
+		var aTopLine = document.querySelectorAll('.topLine');
+		var aBottomLine = document.querySelectorAll('.bottomLine');
+
+		for (var i = 0; i < aTopLine.length; i++) {
+			if (pengzhuang(oBird,aTopLine[i]) || pengzhuang(oBird,aBottomLine[i])) {
+				die();
+			}
+			aTopLine[i].style.left = aBottomLine[i].style.left = aTopLine[i].leftData - 1 + '%';
+			aTopLine[i].leftData = aTopLine[i].leftData - 1;
+			if (aTopLine[i].leftData < -0) {
+				oWrap.removeChild(aTopLine[i]);
+				oWrap.removeChild(aBottomLine[i]);
+			}
+		}
+	},30)
+
+	clearInterval(moveBirdTimer);
+	moveBirdTimer = setInterval(function(){
+		iSpeed += 5;
+		var t = oBird.offsetHeight + iSpeed;
+		if (t < 0) {
+			t = 0;
+			die();
+		}else if (t > oWrap.offsetHeight-2 - oBird.offsetHeight) {
+			t = oWrap.offsetHeight-2 - oBird.offsetHeight;
+			die();
+		}
+		oBird.style.top = t + 'px';
+	},30)
+	
+	function die(){	
+		iSdie = true;
+		clearInterval(moveBirdTimer);
+		clearInterval(addLineTimer);
+		clearInterval(lineLeftTimer);
+	}
+	
+	document.onkeydown = function(){
+		
+		if (iSdie) {
+			return false;
+		}
+		
+		console.log(iSpeed);
+		iSpeed -= 50;
+	}
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>072-延迟定时器的使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// setTimeout('console.log(1)',2000);
+	setTimeout('console.log("hahaha")',2000);
+	// window.setTimeout('console.log(1)',2000);
+	/*
+	function show(){
+		console.log('hahahhaha');
+	}
+	setTimeout(show,3000);
+	*/
+	var timer = setTimeout(function(){
+		console.log('hahahha');
+	},2000)
+	clearTimeout(timer);
+	console.log(timer);
+</script>
+</html>

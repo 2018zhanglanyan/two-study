@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033-月份案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 380px;
+			height: 600px;
+			background: #93ace5;
+			margin: 100px auto;
+			box-sizing: border-box;
+		}
+		.clearfix:after{
+			display: block;
+			visibility: hidden;
+			height: 0px;
+			content: '';
+			clear: both;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		li{
+			list-style: none;
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: pink;
+			color: #fff;
+			line-height: 100px;
+			text-align: center;
+			font-weight: 700;
+			font-size: 20px;
+			margin: 20px 0px 0px 20px;
+		}
+		.active{
+			color: tomato;
+			background: skyblue;
+		}
+		.play{
+			width: 100%;
+			height: 120px;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="clearfix">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+		<div class="play">
+			<!-- <h2>一月</h2> -->
+			<!-- <p>吃饭</p> -->
+		</div>
+	</div>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	var oPlay = document.querySelector('.play');
+	var aContent = ['睡觉','吃饭','打豆','旅游','踏青','唱歌','看书','逛街','散步','跳舞','上学','挣钱'];
+	oPlay.innerHTML = '<h2>1月</h2><p>睡觉</p>';
+	// console.log(aLi);
+	// console.log(oPlay);
+	for (var i = 0; i < aLi.length; i++) {
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for (var j = 0; j < aLi.length; j++) {
+				aLi[j].className = '';
+			}
+			this.className = 'active';
+			oPlay.innerHTML = '<h2>'+(this.index+1)+'月</h2>'+'<p>'+aContent[this.index]+'</p>';
+		}
+	}
+</script>
+</html>

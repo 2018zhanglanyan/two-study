@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-变量var和let的区别.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	区别一: let定义过的变量不能再定义,var定义过的变量可以重新定义
+	var a = 1;
+	var a = 2;
+	console.log(a);
+
+	let b = 1;
+	let b = 2;
+	console.log(b);
+	*/
+
+	/*
+	区别二：let定义的变量不会声明提升,var定义的变量会发生声明提升 
+	console.log(a); // undefind
+	var a = 1;
+
+	console.log(b);
+	let b = 1;
+	*/
+
+	/*
+	区别三：let定义的变量在let命令所在的代码块内有效,var定义的变量在函数范围内有效  一个{}就是一个块级
+	if (true) {
+		var a = 1;
+		console.log(a);
+	}
+	console.log(a);
+
+	if (true) {
+		let b = 1;
+		console.log(b);
+	}
+	console.log(b);
+	*/
+
+	function fn1(){
+		var a = 1;
+		function fn2(){
+			a = 2;
+			console.log('fn2:::',a);
+		}
+		console.log('1:::fn1',a);
+		fn2();
+		console.log('2:::fn1',a);
+	}
+	fn1();
+
+	// function fn1(){
+	// 	let b = 1;
+	// 	function fn2(){
+	// 		b = 2;
+	// 		console.log('fn2:::',b);
+	// 	}
+	// 	console.log('1:::fn1',b);
+	// 	fn2();
+	// 	console.log('2:::fn1',b);
+	// }
+	// fn1();
+</script>
+</html>

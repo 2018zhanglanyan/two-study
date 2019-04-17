@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-封闭空间-构造对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype.sayName = function(){
+			console.log('I am '+this.name);
+		}
+		Person.prototype.sayAge = function(){
+			console.log('I am '+this.age+' years old');
+		}
+
+		Person.prototype = {
+			
+		}
+
+		w.Person = Person;
+	})(window);
+	var p1 = new Person('Tom',20);
+	console.log(p1);
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>144-事件-事件类型属性type.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #f67;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	function handleEvent(ev){
+		if (ev.type == 'mouseover') {
+			oBox.style.backgroundColor = '#ff0';
+		}else if (ev.type == 'click') {
+			oBox.style.backgroundColor = '#f67';
+		}
+	}
+
+	oBox.addEventListener('mouseover',handleEvent,false);
+
+	oBox.addEventListener('click',handleEvent,false);
+</script>
+</html>

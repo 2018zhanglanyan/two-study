@@ -1,0 +1,38 @@
+/*苏宁易购 css 共同样式*/
+
+/*首页共同样式*/
+
+body{
+	background-color: #f2f2f2;
+	font-size: 12px;
+}
+/*布局*/
+.container{
+	width: 1190px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/*a标签*/
+a{
+	text-decoration: none;
+	color: #999;
+}
+/*浮动*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+/*清除浮动*/
+.clearfix:after{
+	display: block;
+	height: 0px;
+	content: '';
+	clear: both;
+	visibility: hidden;
+}
+/*兼容性*/
+.clear{
+	*zoom: 1;
+}

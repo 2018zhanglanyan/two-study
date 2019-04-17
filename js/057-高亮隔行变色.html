@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>057-高亮隔行变色.html</title>
+</head>
+<body>
+	<ul id="ul">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul');
+	var aLi = oUl.children;
+	// console.log(aLi);
+	var originColor = '';
+	for (var i = 0; i < aLi.length; i++) {
+		if (i%2) {
+			// console.log(i);
+			aLi[i].style.backgroundColor = '#ccc';
+		}else{
+			aLi[i].style.backgroundColor = '#f67';
+		}
+		aLi[i].onmouseover = function(){
+			originColor = this.style.backgroundColor;
+			this.style.backgroundColor = '#f00';
+		}
+		aLi[i].onmouseout = function(){
+
+			this.style.backgroundColor = originColor;
+		}
+	}
+</script>
+</html>

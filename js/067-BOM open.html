@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>067-BOM open.html</title>
+</head>
+<body>
+	<input type="button" id="btn" value="打开">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		// console.log(window.open);
+		// window.open('http://kuazhu.com');
+		// window.open("about:blank",'_blank');
+		window.open("about:self",'_self');
+	}
+	
+</script>
+</html>

@@ -1,0 +1,1060 @@
+/*苏宁易购 css 共同样式*/
+
+/*右侧固定侧边栏样式*/
+	/*第一个li*/
+.gudinglan{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 35px;
+	height: 100%;
+	margin-left: 300px;
+	background-color: #383838;
+	z-index: 20;
+}
+.gudinglan ul{
+    width: 35px;
+    height: 100%;
+    background: #383838;
+}
+.gudinglan ul .top-img{
+	width: 55px;
+	height: 150px;
+}
+.gudinglan ul .top-img a{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 55px;
+	height: 150px;
+}
+.gudinglan ul .top-img a img{
+	width: 100%;
+	height: 100%;
+}
+.gudinglan ul .top-img a:hover{
+	background-color: transparent;
+}
+	/*li的共同样式*/
+.gudinglan ul li a{
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 30px;
+}
+	/*icon的共同样式*/
+.gudinglan ul li a .icon{
+	display: block;
+	width: 35px;
+	height: 30px;
+	background-image: url(../images/rightlantubiao.png);
+	background-repeat: no-repeat;
+}
+	/*弹窗的共同样式*/
+.gudinglan ul li a .m-tanchuang,
+.gudinglan ul li a .tanchuang{
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 47px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #383838;
+	color: #f90;
+	transition: all 0.5s;
+	z-index: -1;
+}
+.gudinglan ul li a .m-tanchuang{
+	width: 73px;
+}
+.gudinglan ul li a:hover .m-tanchuang{
+	visibility: visible;
+	background-color: #f90;
+	color: #333;
+	left: -73px;
+}
+.gudinglan ul li a:hover .tanchuang{
+	visibility: visible;
+	left: -47px;
+	background-color: #f90;
+	color: #333;
+}
+.gudinglan ul li a:hover{
+	background-color: #f90;
+}
+	/*第二个li的样式*/
+.gudinglan ul .user{
+	margin-top: 27px;
+	margin-bottom: 10px;
+}
+.gudinglan ul .user a .icon{
+	background-position: 0px 0px;
+}
+.gudinglan ul .user a:hover .icon{
+	background-position: -26px 0px;
+}
+	/*第三个li的样式*/
+.gudinglan ul .cart a{
+	height: 117px;
+	border-top: 1px solid #4d4d4d;
+	border-bottom: 1px solid #4d4d4d;
+	text-align: center;
+}
+.gudinglan ul .cart a .icon{
+	margin-top: 3px;
+	background-position: 3px -210px;
+}
+.gudinglan ul .cart a .cart-che{
+	display: inline-block;
+	width: 20px;
+	line-height: 18px;
+	color: #fff;
+}
+.gudinglan ul .cart a .cart-che span{
+	display: inline-block;
+	min-width: 20px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	background-color: #d00;
+	border-radius: 5px;
+}
+	/*第四个li的样式*/
+.gudinglan ul .xinxi a{
+	margin-top: 5px;
+}
+.gudinglan ul .xinxi a .icon{
+	background-position: 0px -23px;
+}
+.gudinglan ul .xinxi a:hover .icon{
+	background-position: -26px -23px;
+}
+	/*第五个li的样式*/
+.gudinglan ul .licai a{
+	margin-top: 55px;
+}
+.gudinglan ul .licai a .icon{
+	background-position: 0px -47px;
+}
+.gudinglan ul .licai a:hover .icon{
+	background-position: -26px -47px;
+}
+	/*第六个li的样式*/
+.gudinglan ul .foot a{
+	margin-top: 5px;
+}
+.gudinglan ul .foot a .icon{
+	background-position: 0px -70px;
+}
+.gudinglan ul .foot a:hover .icon{
+	background-position: -26px -70px;
+}
+	/*第七个li的样式*/
+.gudinglan ul .qiandao a{
+	margin-top: 5px;
+}
+.gudinglan ul .qiandao a .icon{
+	background-position: 0px -93px;
+}
+.gudinglan ul .qiandao a:hover .icon{
+	background-position: -26px -93px;
+}
+	/*第八个li的样式*/
+.gudinglan ul .zixun a{
+	margin-top: 115px;
+}
+.gudinglan ul .zixun a .icon{
+	background-position: 0px -117px;
+}
+.gudinglan ul .zixun a:hover .icon{
+	background-position: -26px -117px;
+}
+	/*第九个li的样式*/
+.gudinglan ul .yijian a{
+	margin-top: 5px;
+}
+.gudinglan ul .yijian a .icon{
+	background-position: 0px -138px;
+}
+.gudinglan ul .yijian a:hover .icon{
+	background-position: -26px -138px;
+}
+	/*第十个li的样式*/
+.gudinglan ul .saoma a{
+	margin-top: 5px;
+}
+.gudinglan ul .saoma a .icon{
+	background-color: transparent;
+	background-position: 0px -163px;
+}
+.gudinglan ul .saoma a .icon span{
+	display: none;
+	position: absolute;
+	top: 6px;
+	left: 0px;
+	width: 7px;
+    height: 20px;
+    background-image: url(../images/rightlantubiao.png);
+    background-repeat: no-repeat;
+    background-position: -38px -219px;
+}
+.gudinglan ul .saoma a .beijing{
+	visibility: hidden;
+	position: absolute;
+	bottom: -5px;
+	left: 0px;
+	width: 160px;
+	height: 236px;
+	background-image: url(../images/background-image.png);
+	transition: all 0.5s;
+	z-index: -10;
+}
+.gudinglan ul .saoma a .beijing img{
+	display: block;
+	width: 134px;
+	height: 134px;
+	margin: 60px auto;
+}
+.gudinglan ul .saoma a:hover .icon span{
+	display: block;
+}
+.gudinglan ul .saoma a:hover .icon{
+	background-position: -26px -163px;
+}
+.gudinglan ul .saoma a:hover .beijing{
+	left: -160px;
+	visibility: visible;
+}
+	/*第11个li的样式*/
+.gudinglan ul .top a{
+	margin-top: 5px;
+}
+.gudinglan ul .top a .icon{
+	background-position: 0px -260px;
+}
+.gudinglan ul .top a:hover .icon{
+	background-position: -26px -260px;
+}
+/*顶部隐藏图片样式*/
+.dingbu{
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100px;
+	background-color: rgb(231, 0, 44);
+	cursor: pointer;
+}
+.dingbu a img{
+	width: 1190px;
+	height: 100px;
+} 
+.dingbu .btn-off{
+	display: none;
+ 	position: absolute;
+ 	top: 3px;
+ 	right: 56px;
+ 	width: 15px;
+ 	height: 15px;
+ 	background-image: url(../images/xiaotubiao.png);
+ 	background-repeat: no-repeat;
+ 	background-position: -241px -145px;
+}
+.dingbu .btn-off:hover{
+	background-position: -256px -145px;
+}
+/*顶部导航左边样式*/
+.top-nav{
+	position: relative;
+	width: 100%;
+	height: 35px;
+	background-color: #f5f5f5;
+}
+.top-nav .left-nav{
+	height: 100%;
+}
+.top-nav .left-nav li{
+	float: left;
+	width: 81px;
+	height: 35px;
+	line-height: 35px;
+}
+.top-nav .left-nav li a{
+	padding: 0px 10px;
+}
+.top-nav .left-nav li a span{
+	color: #666;
+}
+.top-nav .left-nav li:nth-child(2):hover a span{
+	color: #f60;
+}
+.top-nav .left-nav li a i{
+	color: #bbb;
+	padding-left: 3px;
+	vertical-align: -2px;
+	cursor: default;
+}
+.top-nav .left-nav .dizhi a .fa-map-marker{
+	font-size: 18px;
+	color: #f90;
+	margin-right: 2px;
+}
+.top-nav .left-nav .dizhi a .fa-caret-down{
+	font-size: 13px;
+	cursor: pointer;
+}
+/*顶部导航右边样式*/
+.top-nav .right-nav{
+	height: 100%;
+}
+.top-nav .right-nav li{
+	min-width: 50px;
+	float: left;
+	line-height: 35px;
+}
+.top-nav .right-nav li a{
+	padding: 0px 10px;
+}
+.top-nav .right-nav li a i{
+	color: #bbb;
+	padding-left: 3px;
+	vertical-align: -2px;
+	cursor: default;
+}
+.top-nav .right-nav li a span{
+	color: #666;
+}
+.top-nav .right-nav li:hover a span{
+	color: #f60;
+}
+.top-nav .right-nav li .fontcolor span,
+.top-nav .right-nav li .fontcolor .fa-shopping-cart{
+	color: #f60;
+}
+.top-nav .right-nav li .fontcolor .fa-shopping-cart{
+	padding-right: 6px;
+	font-size: 14px;
+	vertical-align: 0px;
+	cursor: pointer;
+}
+.top-nav .right-nav .dizhi .fontcolor .fa-caret-down{
+	cursor: pointer;
+}
+.top-nav .right-nav li .fontcolor span .num{
+	padding: 0px 3px;
+}
+/*隐藏按钮*/
+.top-nav .btn-open{
+ 	position: absolute;
+ 	top: 3px;
+ 	right: 56px;
+ 	width: 15px;
+ 	height: 15px;
+ 	background-image: url(../images/xiaotubiao.png);
+ 	background-repeat: no-repeat;
+ 	background-position: -241px -160px;
+}
+.top-nav .btn-open:hover{
+	background-position: -256px -160px;
+}
+/*搜索导航样式*/
+.top-sousuo{
+	height: 110px;
+	background-color: #fff;
+}
+.top-sousuo .top-logo{
+	height: 100%;
+}
+.top-sousuo .top-logo a img{
+	width: 190px;
+	height: 90px;
+}
+.top-sousuo .top-input{
+	position: relative;
+	width: 540px;
+	margin-top: 30px;
+	box-sizing: border-box;
+}
+.top-sousuo .top-input .t-input{
+	width: 418px;
+	height: 36px;
+	border: 2px solid #f90;
+	border-right: none;
+}
+.top-sousuo .top-input .t-input i{
+	font-size: 14px;
+	color: #ccc;
+	width: 24px;
+	height: 36px;
+	line-height: 36px;
+	text-align: right;
+}
+.top-sousuo .top-input .t-input .text{
+	width: 390px;
+	height: 36px;
+	padding-left: 3px;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+.top-sousuo .top-input .t-input .text::-webkit-input-placeholder{
+	color: #d2d2d2;
+}
+.top-sousuo .top-input .btn{
+	width: 120px;
+	height: 40px;
+	outline: none;
+	border: none;
+	background-color: #f90;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 2px
+}
+
+.top-sousuo .top-input .t-list{
+	width: 100%;
+	height: 18px;
+	margin-top: 45px;
+}
+.top-sousuo .top-input .t-list ul{
+	width: 540px;
+	height: 18px;
+}
+.top-sousuo .top-input .t-list ul li{
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+}
+.top-sousuo .top-input .t-list ul li:hover a{
+	color: #f60;
+}
+.top-sousuo .top-input .t-list ul li .fontcolor{
+	color: #f60;
+}
+.top-sousuo .top-input .t-list ul li a span{
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	margin: 0px 9.5px;
+	background-color: #ddd;
+	vertical-align: -1px;
+}
+/*搜索弹出框样式*/
+.top-sousuo .top-input .sousuokuang{
+	display: none;
+	position: absolute;
+	top: 41px;
+	left: 0px;
+	width: 538px;
+	height: 270px;
+	border: 1px solid #e4e4e4;
+}
+.top-sousuo .top-input .sousuokuang .left{
+	position: relative;
+	width: 251px;
+	height: 270px;
+	border-right: 1px solid #efefef;
+}
+.top-sousuo .top-input .sousuokuang .left h5{
+	width: 239px;
+	height: 28px;
+	line-height: 28px;
+	background-color: #eee;
+	padding-left: 12px;
+	color: #999;
+	cursor: default;
+}
+.top-sousuo .top-input .sousuokuang .left .sousuo-content{
+	height: 240px;
+	background-color: #fff;
+	text-align: center;
+}
+.top-sousuo .top-input .sousuokuang .left .sousuo-content img{
+	position: absolute;
+	top: 75px;
+	left: 50%;
+	margin-left: -50px;
+	width: 100px;
+	height: 90px;
+}
+.top-sousuo .top-input .sousuokuang .left .sousuo-content p{
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	font-size: 16px;
+	color: #ccc;
+	margin-left: -72px;
+	cursor: default;
+}
+.top-sousuo .top-input .sousuokuang .right{
+	position: relative;
+	width: 274px;
+	height: 270px;
+	padding-left: 12px;
+	background-color: #fff;
+}
+.top-sousuo .top-input .sousuokuang .right .sousuo-title{
+	width: 274px;
+	height: 28px;
+}
+.top-sousuo .top-input .sousuokuang .right .sousuo-title h5{
+	width: 260px;
+	height: 28px;
+	color: #999;
+	line-height: 28px;
+	cursor: default;
+}
+.top-sousuo .top-input .sousuokuang .right .sousuo-title  span{
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	width: 14px;
+	height: 12px;
+	background-image: url(../images/reg_icons.png);
+	background-repeat: no-repeat;
+	background-position: -48px -27px;
+	cursor: pointer;
+}
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul{
+	width: 274px;
+	height: 242px;
+}
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li a{
+	display: block;
+	float: left;
+	border: 1px solid #e1e1e1;
+	color: #666;
+	padding: 5px;
+	margin: 12px 15px 0px 0px;
+}
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li:hover a{
+	background-color: #f60;
+	color: #fff;
+	border-color: #F60;
+}
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li:nth-child(1) a,
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li:nth-child(2) a,
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li:nth-child(3) a,
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li:nth-child(4) a{
+	margin-top: 5px;
+}
+.top-sousuo .top-input .sousuokuang .right .yi-sousuo ul li .fontcolor{
+	border: 1px solid #f60;
+	color: #f60;
+}
+/*全部商品导航样式*/
+.shop{
+	width: 100%;
+	height: 38px;
+}
+.shop ul{
+	width: 100%;
+	height: 38px;
+}
+.shop ul li{
+	position: relative;
+	float: left;
+	padding: 0px 11px 0px 13px;
+}
+.shop ul li a{
+	display: block;
+	height: 38px;
+	line-height: 38px;
+}
+.shop ul li a h5{
+	font-size: 15px;
+	color: #333;
+	font-weight: bold;
+}
+.shop ul li a span{
+	visibility: hidden;
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	margin-left: -12px;
+	width: 25px;
+	height: 8px;
+	background-image: url(../images/xiaotubiao.png);
+	background-position: -37px 0px;
+	transition: all 0.3s;
+}
+.shop ul li a:hover span{
+	visibility: visible;
+	bottom: 0px;
+}
+.shop ul li:first-child{
+	padding-left: 0px;
+}
+.shop ul li:first-child a{
+	display: block;
+	width: 190px;
+	height: 38px;
+	line-height: 38px;
+	background-color: #f90;
+	color: #fff;
+}
+.shop ul li:first-child a i{
+	font-size: 14px;
+	margin: 0px 3px 0px 10px;
+}
+.shop ul li:first-child a h5{
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+}
+.shop ul li:nth-child(4) a div{
+	position: absolute;
+	top: 0px;
+	left: auto;
+	margin-left: 60px;
+	width: 14px;
+	height: 17px;
+	background-image: url(../images/xiaotubiao.png);
+	background-position: -345px -213px;
+}
+.shop ul li:last-child{
+	float: right;
+}
+.shop ul li:hover a h5{
+	color: #f60;
+}
+.shop ul li:first-child:hover a{
+	background-color: #f80;
+	color: #fff;
+}
+.shop ul li:first-child:hover a h5{
+	color: #fff;
+}
+/*列表,轮播,新人列表样式*/
+	/*背景图处理*/
+.carousel{
+	position: relative;
+	width: 100%;
+	height: 482px;
+	overflow: hidden;
+}
+.carousel .background{
+	position: absolute;
+	top: 0px;
+	width: 545px;
+	height: 482px;
+}
+.carousel .background img{
+	width: 100%;
+	height: 100%;
+	background-color: #f5f5f5;
+}
+.carousel .zuo{
+	left: -160px;
+}
+.carousel .you{
+	right: -160px;
+}
+	/*列表样式*/
+.line:after{
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	background-color: #d8d8d8;
+	opacity: 0.4;
+	margin: 0px 5px;
+	vertical-align: middle;
+	content: '';
+	clear: both;
+}
+.carousel .container{
+	position: relative;
+}
+.carousel .list{
+	width: 190px;
+	height: 482px;
+	background-color: #252221;
+}
+.carousel .list ul{
+	position: absolute;
+	top: 1px;
+	left: 0px;
+	width: 190px;
+	height: 482px;
+}
+.carousel .list ul li{
+	width: 173px;
+	height: 32px;
+	line-height: 32px;
+	padding: 0px 8px 0px 10px;
+}
+.carousel .list ul li a{
+	font-size: 13px;
+	color: #fff;
+}
+.carousel .list ul li:hover{
+	background-color: #fff;
+}
+.carousel .list ul li:hover a{
+	color: #333;
+}
+.carousel .list ul li a:hover{
+	color: #f60;
+}
+	/*轮播图样式*/
+.carousel .carousel-box{
+	position: absolute;
+	top: 0px;
+	left: 190px;
+	width: 830px;
+	height: 482px;
+}
+.carousel .carousel-box .carousel-img .lunbo-img{
+	width: 830px;
+	height: 482px;
+}
+.carousel .carousel-box .carousel-img .lunbo-img li{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 830px;
+	height: 482px;
+}
+	/*轮播图左右按钮样式*/
+.carousel .carousel-box .carousel-img .arrow{
+	position: absolute;
+	top: 50%;
+	margin-top: -32px;
+	display: block;
+	width: 30px;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	background-color: rgb(0,0,0,0.1);
+	cursor: pointer;
+}
+.carousel .carousel-box .carousel-img .leftBtn{
+	left: 0px;
+}
+.carousel .carousel-box .carousel-img .rightBtn{
+	right: 0px;
+}
+	/*轮播图底部按钮样式*/
+.carousel .carousel-box .carousel-img .bottom-btn{
+	position: absolute;
+	bottom: 137px;
+	left: 50%;
+	margin-left: -115px;
+}
+.carousel .carousel-box .carousel-img .bottom-btn li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin-right: 10px;
+	background-color: pink;
+}
+.carousel .carousel-box .carousel-img .bottom-btn li:last-child{
+	margin-right: 0px;
+}	
+	/*轮播图列表样式*/
+.carousel .carousel-box .carousel-guanggao{
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	margin-left: -408px;
+	width: 816px;
+	height: 122px;
+}
+.carousel .carousel-box .carousel-guanggao ul{
+	width: 816px;
+	height: 122px;
+}
+.carousel .carousel-box .carousel-guanggao ul li{
+	position: relative;
+	float: left;
+	width: 202px;
+	height: 122px;
+	background-color: #fff;
+	margin-left: 2px;
+}
+.carousel .carousel-box .carousel-guanggao ul li h4{
+	font-weight: 700;
+	font-size: 17px;
+	padding-top: 10px;
+	padding-left: 12px;
+}
+.carousel .carousel-box .carousel-guanggao ul li:nth-child(1) h4{
+	color: rgba(239,65,36);
+}
+.carousel .carousel-box .carousel-guanggao ul li:nth-child(2) h4{
+	color: rgba(152,55,238);
+}
+.carousel .carousel-box .carousel-guanggao ul li:nth-child(3) h4{
+	color: rgba(68,177,113);
+}
+.carousel .carousel-box .carousel-guanggao ul li:nth-child(4) h4{
+	color: rgba(36,130,239);
+}
+.carousel .carousel-box .carousel-guanggao ul li p{
+	font-size: 14px;
+	color: #666;
+	padding-left: 12px;
+}
+.carousel .carousel-box .carousel-guanggao ul li img{
+	position: absolute;
+	bottom: 6px;
+	right: 10px;
+	width: 80px;
+	height: 80px;
+}
+	/*右侧新人列表样式*/
+.carousel .xinren-list{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 170px;
+	height: 100%;
+	background-color: #fff;
+}
+	/*top*/
+.carousel .xinren-list .xinren-top{
+	width: 100%;
+	height: 155px;
+	border-bottom: 1px solid #f2f2f2;
+	padding: 11px 0px 0px 0px;
+}
+.carousel .xinren-list .xinren-top div{
+	width: 100%;
+	height: 65px;
+}
+.carousel .xinren-list .xinren-top div .head{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 52px;
+	height: 52px;
+	margin-top: 10px;
+	margin-left: -26px;
+	background-image: url(../images/xiaotubiao.png);
+	background-repeat: no-repeat;
+	background-position: -92px -23px;
+}
+.carousel .xinren-list .xinren-top h6{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	color: #333;
+	text-align: center;
+}
+.carousel .xinren-list .xinren-top .xinren-youli{
+	width: 100%;
+	height: 22px;
+	text-align: center;
+	margin: 6px auto 13px;
+}
+.carousel .xinren-list .xinren-top .xinren-youli .li{
+	display: inline-block;
+	width: 68px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffa114;
+	border: 1px solid #f90;
+	vertical-align: 6px;
+	margin: 0px 3px;
+}
+.carousel .xinren-list .xinren-top .xinren-youli .huiyuan{
+	display: inline-block;
+	width: 70px;
+	height: 22px;
+	background-image: url(../images/xiaotubiao.png);
+	background-repeat: no-repeat;
+	background-position: -295px -251px;
+	margin: 0px 3px;
+}
+.carousel .xinren-list .xinren-top .xinren-linrquan{
+	width: 100%;
+	height: 18px;
+	text-align: center;
+}
+.carousel .xinren-list .xinren-top .xinren-linrquan .zhuan,
+.carousel .xinren-list .xinren-top .xinren-linrquan .quan{
+	display: inline-block;
+	width: 70px;
+	height: 18px;
+	background-image: url(../images/xiaotubiao.png);
+	background-repeat: no-repeat;
+	background-position: -670px -256px;
+	margin: 0px 3px;
+}
+.carousel .xinren-list .xinren-top .xinren-linrquan .zhuan{
+	background-position: -670px -256px;
+}
+.carousel .xinren-list .xinren-top .xinren-linrquan .quan{
+	background-position: -670px -288px;
+}
+	/*center*/
+.carousel .xinren-list .xinren-center{
+	width: 150px;
+	height: 145px;
+	margin: 11px 10px;
+}
+.carousel .xinren-list .xinren-center ul{
+	width: 150px;
+	height: 145px;
+	background-color: #fff;
+}
+.carousel .xinren-list .xinren-center ul li{
+	width: 100%;
+	height: 48px;
+}
+.carousel .xinren-list .xinren-center ul li a{
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 20px;
+	color: #333;
+	overflow: hidden;
+}
+.carousel .xinren-list .xinren-center ul li a span{
+	margin-right: 3px;
+	color: #f60;
+}
+	/*bottom*/
+.carousel .xinren-list .xinren-bottom{
+	width: 100%;
+	height: 148px;
+}
+.carousel .xinren-list .xinren-bottom ul{
+	width: 100%;
+	height:100%;
+	background-color: #fff;
+}
+.carousel .xinren-list .xinren-bottom ul li{
+	float: left;
+	width: 56px;
+	height: 73px;
+	text-align: center;
+	border-right: 1px solid #f2f2f2;
+	border-top: 1px solid #f2f2f2;
+}
+.carousel .xinren-list .xinren-bottom ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.carousel .xinren-list .xinren-bottom ul li:nth-child(3),
+.carousel .xinren-list .xinren-bottom ul li:nth-child(6){
+	border-right: none;
+}
+.carousel .xinren-list .xinren-bottom ul li a i{
+	font-size: 24px;
+	color: #f90;
+	margin-top: 15px;
+}
+.carousel .xinren-list .xinren-bottom ul li a p{
+	color: #333;
+	margin-top: 5px;
+}
+.carousel .xinren-list .xinren-bottom ul li a:hover p{
+	color: #f60;
+}
+/*精选爆款样式*/
+.jingxuan{
+	width: 100%;
+	height: 596px;
+}
+.jingxuan .container{
+	position: relative;
+}
+.jingxuan .title{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1190px;
+	height: 596px;
+	background-image: url(../images/jingxuan.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.jingxuan .jingxuan-content ul{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 446px;
+	margin-top: 150px;
+}
+.jingxuan .jingxuan-content ul li{
+	float: left;
+	width: 230px;
+	height: 213px;
+	margin-right: 10px;
+}
+.jingxuan .jingxuan-content ul li:nth-child(5),
+.jingxuan .jingxuan-content ul li:nth-child(10){
+	margin-right: 0px;
+}
+.jingxuan .jingxuan-content ul .topline{
+	margin-top: 10px;
+}
+.jingxuan .jingxuan-content ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.jingxuan .jingxuan-content ul li a img{
+	width: 120px;
+	height: 120px;
+	margin-top: 15px;
+}
+.jingxuan .jingxuan-content ul li a h4{
+	font-size: 20px;
+	color: #fff;
+	margin-top: 8px;
+}
+.jingxuan .jingxuan-content ul li a p{
+	font-size: 16px;
+	color: #ff6ca9;
+	margin-top: 7px;
+}
+/*限时抢购样式*/
+.xianshi{
+	width: 100%;
+	height: 596px;
+	background-color: pink;
+	margin-top: 20px;
+}
+.xianshi .xianshi-title{
+	height: 46px;
+	background-color: #fff;
+}
+.xianshi .xianshi-title .left-title li{
+	float: left;
+	line-height: 46px;
+}
+.xianshi .xianshi-title .left-title .title{
+	font-size: 18px;
+	font-weight: 800;
+	color: #d00;
+	padding: 0px 20px;
+}
+.xianshi .xianshi-title .left-title .daojishi .text{
+	color: #333;
+	padding-right: 5px;
+}
+.xianshi .xianshi-title .left-title .daojishi .shijian{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 21px;
+	text-align: center;
+	background-color: #333;
+	border-radius: 5px;
+	vertical-align: -1px;
+}

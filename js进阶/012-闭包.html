@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-闭包.hmtl</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function fn(){
+		var n = 1;
+		return function(){
+			return n;
+		}
+	}
+	console.log(fn()());
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>105-滚动条固定顶部动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.top{
+			height: 100px;
+			background-color: #ccc;
+		}
+		#nav{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 0px;
+			background-color: #f67;
+		}
+		.main{
+			height: 3000px;
+			background-color: #ff0;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"></div>
+	<div id="nav"></div>
+	<div class="main"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	/*
+	 *	匀速动画封装函数
+	 *	第一个参数：{[object]} obj [DOM节点对象]
+	 *	第二个参数：{[String]} attr [属性名称]
+	 *	第三个参数：{[Number]} target [目标值]
+	 *
+	*/
+	
+	function animate(obj,attr,target){
+		//防止多次执行
+		clearInterval(obj.timer);
+		var iSpeed = 0;
+		obj.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			//透明度处理
+			if (attr == 'opacity') {
+				current = Math.round(current * 100);
+			}
+			//匀速动画处理速度
+			if (current > target) {
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			//匀速动画终止条件处理
+			if (Math.abs(target-current) < Math.abs(iSpeed)) {
+				if (attr == 'opacity') {
+					obj.style.opacity = target / 100;
+				}else{
+					obj.style[attr] = target + 'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if (attr == 'opacity') {
+					obj.style.opacity = (current + iSpeed) / 100;
+				}else{
+					obj.style[attr] = current + iSpeed + 'px';
+				}
+			}
+		},30);
+	}
+	
+	var oNav = document.getElementById('nav');
+	var isShow = false;
+	window.onscroll = function(){
+		 // oNav.style.height = '100px';
+		 // console.log(document.documentElement.scrollTop);
+		var iTop = getScrollTop();
+		if (iTop>=100) {
+			if (!isShow) {
+				// console.log('aa');
+				animate(oNav,'height',100);
+				isShow = true;
+			}
+		}else{
+			if (isShow) {
+				// console.log('bb');
+				animate(oNav,'height',0);
+				isShow = false;
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>084-数码时钟-文字版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ff6700;
+		}
+		#timer{
+			margin: 100px auto;
+			text-align: center;
+			font-size: 80px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer"></div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	function to2Str(num){
+		/*
+		if (num<10) {
+			return "0"+num;
+		}else{
+			return ""+num;
+		}
+		*/
+		return num<10 ? "0"+num : ""+num;
+	}
+	function handTime(){
+		var toDay = new Date();
+		// console.log(toDay);
+		var iHour = toDay.getHours();
+		// console.log(iHour);
+		var iMinute = toDay.getMinutes();
+		// console.log(iMinute);
+		var iSecond = toDay.getSeconds();
+		// console.log(iSecond);
+		var iTimer = to2Str(iHour) + ":" + to2Str(iMinute) + ":" + to2Str(iSecond);
+		// console.log(iTimer);
+		oTimer.innerHTML = iTimer;
+	}
+	setInterval(handTime,1000);
+	handTime();
+</script>
+</html>

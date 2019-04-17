@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-let-i值问题.html</title>
+</head>
+<body>
+	<button>点我1</button>
+	<button>点我2</button>
+	<button>点我3</button>
+	<button>点我4</button>
+</body>
+<script>
+	var aBtn = document.getElementsByTagName('button');
+	
+	/*
+	for (var i = 0; i < aBtn.length; i++) {
+		aBtn[i].onclick = function(){
+			console.log(i);
+		}
+	}
+	console.log(i);
+	*/
+
+	/*
+	for (var i = 0; i < aBtn.length; i++) {
+		aBtn[i].index = i;
+		aBtn[i].onclick = function(){
+			console.log(this.index);
+		}
+	}
+	console.log(i);
+	*/
+
+	/*
+	for (var i = 0; i < aBtn.length; i++) {
+		(function(i){
+			aBtn[i].onclick = function(){
+				console.log(i);
+			}
+		})(i);
+	}
+	console.log(i);
+	*/
+
+	for (let i = 0; i < aBtn.length; i++) {
+		aBtn[i].onclick = function(){
+			console.log(i);
+		}
+	}
+	// console.log(i); // 报错  i is not defined  let是块级作用域  在外面是拿不到的
+</script>
+</html>

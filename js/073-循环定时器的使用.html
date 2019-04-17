@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>073-循环定时器的使用.html</title>
+</head>
+<body>
+	<button id="btn">关闭</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	// setInterval('console.log(1)',2000);
+	//setInterval('console.log("hahaha")',2000);
+	// window.setInterval('console.log(1)',2000);
+	/*
+	function show(){
+		console.log('hahahhaha');
+	}
+	var timer = setInterval(show,3000);
+	console.log(timer);
+	*/
+	var timer = setInterval(function(){
+		console.log('hahahha');
+	},2000)
+	// clearTimeout(timer);
+	// console.log(timer);
+	oBtn.onclick = function(){
+		clearTimeout(timer);
+	}
+</script>
+</html>

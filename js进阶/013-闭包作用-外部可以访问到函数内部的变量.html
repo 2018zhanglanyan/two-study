@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-闭包作用-外部可以访问到函数内部的变量.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function fn(){
+		var n = 1;
+		add = function(){
+			n++;
+		}
+		return function(){
+			return n;
+		}
+	}
+	console.log(fn()());
+	var relust = fn();
+	relust();
+	console.log(relust());//1
+	add();
+	console.log(relust());//2
+</script>
+</html>

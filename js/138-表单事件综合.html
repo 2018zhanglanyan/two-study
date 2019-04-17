@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>138-表单事件综合.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 300px;
+			height: 300px;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<form action="https://www.kuazhu.com/" id="form1">
+			<input type="text" id="txt">
+			<input type="submit" id="sub" value="提交">
+			<input type="reset" id="res" value="重置">
+			<p id="smg"></p>
+		</form>
+	</div>
+</body>
+<script>
+	var oForm = document.getElementById('form1');
+	var oTxt = document.getElementById('txt');
+	var oSub = document.getElementById('sub');
+	var oRes = document.getElementById('res');
+	var oSmg = document.getElementById('smg');
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>086-倒计时案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: pink;
+		}
+		#timer{
+			margin: 100px auto;
+			text-align: center;
+			color: #fff;
+			font-size: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer"></div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	var endDate = new Date('2018-12-07 12:05:30');
+	var endTime = endDate.getTime();
+	var timer = 0;
+	function to2Str(num){
+		return num<10 ? '0'+num : ''+num;
+	}
+	function handTimer(){
+		var allMinSecond = endTime - Date.now();
+		// console.log(allMinSecond);
+		if (allMinSecond<=0) {
+			allMinSecond = 0;
+			clearInterval(timer);
+		}
+		var allSecond = parseInt(allMinSecond / 1000);
+		// console.log(iSecond);
+		var iHour = parseInt(allSecond / 3600);
+		// console.log(iHour);
+		var iMinute = parseInt((allSecond % 3600) / 60);
+		// console.log(iMinute);
+		var iSecond = (allSecond % 3600) % 60;
+		oTimer.innerHTML = '距离活动结束仅剩' + to2Str(iHour) + '小时' + to2Str(iMinute) + '分'+ to2Str(iSecond) +'秒';
+	}
+	timer = setInterval(handTimer,1000);
+	handTimer();
+</script>
+</html>

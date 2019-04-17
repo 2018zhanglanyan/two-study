@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>063-练习案例.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oUl1 = document.getElementById('ul1');
+	var oLi = oUl1.children;
+	// console.log(oLi);
+	// console.log(oUl1);
+	var oLi1 = document.createElement('li');
+	var oLi2 = document.createElement('li');
+	console.log(oLi2);
+	// 追加节点
+	oLi1.innerHTML = '4';
+	oUl1.appendChild(oLi1);
+	// 在。。。。之前追加
+	oUl1.insertBefore(oLi2,oLi[0]);
+	oLi2.innerHTML = '0';
+	// 删除节点
+	oUl1.removeChild(oLi[1]);
+</script>
+</html>

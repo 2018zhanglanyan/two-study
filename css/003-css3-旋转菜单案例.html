@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-css3-旋转菜单案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			height: 500px;
+			border: 3px solid tomato;
+			margin: 100px auto;
+			text-align: center;
+		}
+		.box ul{
+			display: inline-block;
+			margin-top: 30px;
+		}
+		.box ul li{
+			list-style: none;
+			width: 120px;
+			height: 80px;
+			line-height: 80px;
+			background: pink;
+			margin-left: 20px;
+			margin-top: 5px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: 800;
+			transition: all 2s;
+		}
+		.box ul li:nth-child(1){
+			background: skyblue;
+		}
+		.box ul li:nth-child(1)~li{
+			transform: rotateY(180deg);
+			opacity: 0;
+		}
+		.box ul li:nth-child(1):hover~li {
+			transform: rotateY(360deg);
+			opacity: 1;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(2){
+			transition: all 1s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(3){
+			transition: all 2s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(4){
+			transition: all 3s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(5){
+			transition: all 4s;
+		}
+		ul li:nth-child(1)~ li:nth-child(2){
+			transition: all 4s;
+		}
+		ul li:nth-child(1)~ li:nth-child(3){
+			transition: all 3s;
+		}
+		ul li:nth-child(1)~ li:nth-child(4){
+			transition: all 2s;
+		}
+		ul li:nth-child(1)~ li:nth-child(5){
+			transition: all 1s;
+		}  
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+			<li>菜单四</li>
+			<li>菜单五</li>
+		</ul>
+		<ul>
+			<li>菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+			<li>菜单四</li>
+			<li>菜单五</li>
+		</ul>
+		<ul>
+			<li>菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+			<li>菜单四</li>
+			<li>菜单五</li>
+		</ul>
+	</div>
+</body>
+</html>

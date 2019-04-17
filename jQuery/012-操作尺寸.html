@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-操作尺寸.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.div1{
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			background-color: pink;
+			border: 10px solid #000;
+		}
+		.div2{
+			width: 150px;
+			height: 150px;
+			padding: 20px;
+			background-color: aqua;
+			border: 20px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">div1</div>
+	<div class="div2">div2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').width());
+		console.log($('div').height());
+		// 包含内边距
+		console.log($('div').innerWidth());
+		console.log($('div').innerHeight());
+		// 包含边框和内边距
+		console.log($('div').outerWidth());
+		console.log($('div').outerHeight());
+
+		console.log($('div').outerWidth(150));
+		console.log($('div').outerHeight(150));
+	})
+</script>
+</html>

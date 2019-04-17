@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-测试.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -150px;
+			margin-left: -150px;
+			width: 300px;
+			height: 300px;
+			background-color: gold;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="box" draggable=true></div>
+</body>
+<script src="../jQuery/js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('#box')
+		.on('dragstart',function(){// dragstart 当元素开始拖动时触发
+			console.log('dragstart');
+		})
+		// .on('drag',function(){// drag 被拖动元素拖动时触发
+		// 	console.log('drag');
+		// })
+		// .on('dragend',function(){// dragend 拖拽时松开鼠标时触发
+		// 	console.log('dragend');
+		// });
+		$('#container')
+		.on('drop',function(){// drop 当放置被拖动元素时触发
+			console.log('drop');
+		})
+		.on('dragover',function(){//dragover被拖动元素正在到放置到容器时触发,默认无法把元素放置到其他元素中,如果需要设置允许放置,我们必须阻止对元素的默认处理方式。
+			console.log('dragover');
+		})
+		// .on('dragenter',function(){// dragenter 当被拖动元素进入容器时触发
+		// 	console.log('dragenter');
+		// })
+		// .on('dragleave',function(){// dragleave 当被拖动元素离开容器时触发
+		// 	console.log('dragleave');
+		// })
+		// .on('dragend',function(){// dragend 被拖动元素在容器中松开鼠标时触发
+		// 	console.log('dragend');
+		// })
+		// .on('drag',function(){// drag 容器中的被拖动元素拖动时触发
+		// 	console.log('drag');
+		// })
+	});
+</script>
+</html>

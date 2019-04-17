@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>191-函数的返回值.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	function sum(){
+		var result = 0;
+		for (var i = 0; i < arguments.length; i++) {
+			result += arguments[i];
+		}
+		// alert(result); 
+		// return 返回值    只 return 的话 是undefined   没有return 也是undefined
+		return result;
+	}
+	// console.log(sum(1,2,3));
+	var result = sum(1,2,3);
+	alert(result);
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>133-事件-onmouseenter和onmouseleave.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 300px;
+			height: 300px;
+			background-color: #ff0;
+			overflow: hidden;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background-color: #f67;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oFather = document.getElementById('father');
+	var oSon = document.getElementById('son');
+	/*
+	// onmouseover 鼠标穿过事件源对象或其子元素时触发
+	oFather.onmouseover = function(){
+		console.log('移入');
+	}
+	// onmouseout 鼠标离开事件源对象或其子元素时触发
+	oFather.onmouseout = function(){
+		console.log('移出');
+	}
+	*/
+	// onmouseenter 鼠标穿过事件源对象时触发
+	oFather.onmouseenter = function(){
+		console.log('移入');
+	}
+	// onmouseleave 鼠标离开事件源对象时触发
+	oFather.onmouseleave = function(){
+		console.log('移出');
+	}
+</script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-css3-单页平滑过渡案例.html</title>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			overflow: hidden;
+		}
+		.page>input,
+		.page>a{
+			position: fixed;
+			top: 0%;
+			width: 20%;
+			height: 35px;
+			text-align: center;
+			line-height: 35px;
+		}
+		.page>a{
+			text-decoration: none;
+			font-size: 24px;
+			color: #fff;
+			background: #2f2f2f;
+		}
+		.page>input:hover + a{
+			background: #000;
+		}
+		.page>a>i{
+			margin-right: 10px;
+		}
+		#ctr1,#ctr1 + a{
+			left: 0%;
+		}
+		#ctr2,#ctr2 + a{
+			left: 20%;
+		}
+		#ctr3,#ctr3 + a{
+			left: 40%;
+		}
+		#ctr4,#ctr4 + a{
+			left: 60%;
+		}
+		#ctr5,#ctr5 + a{
+			left: 80%;
+		}
+		.page>input{
+			z-index: 999;
+			opacity: 0;
+		}
+		.page>input:checked + a{
+			color: #f00;
+		}
+		.page .images{
+			height: 900px;
+			margin-top: 35px;
+			overflow: hidden;
+		}
+		.page .images ul{
+			height: 4500px;
+		}
+		.page .images li{
+			list-style: none;
+			width: 100%;
+			height: 900px;
+		}
+		.page .images li img{
+			width: 100%;
+			height: 100%;
+		}
+		#ctr1:checked ~ .images #img1{
+			/*animation: sport 1s linear 0s 1 normal;*/
+			/*transition: all 2s;*/
+		}
+		#ctr2:checked ~ .images #img2{
+			margin-top: -900px;
+			z-index: 999;
+			transition: all 0.1s;
+			animation: sport 0.8s linear 0s 1 normal;
+		}
+		#ctr3:checked ~ .images #img3{
+			margin-top: -1800px;
+			transition: all 0.1s;
+			animation: sport 0.8s linear 0s 1 normal; 
+		}
+		#ctr4:checked ~ .images #img4{·
+			margin-top: -2700px;
+			transition: all 0.1s;
+			animation: sport 0.8s linear 0s 1 normal;
+		}
+		#ctr5:checked ~ .images #img5{
+			margin-top: -3600px;
+			transition: all 0.1s;
+			animation: sport 0.8s linear 0s 1 normal;
+		}
+		@keyframes sport{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="radio-set" id="ctr1" checked>
+		<a href="#"><i class="fa fa-home"></i>Home</a>
+		<input type="radio"	name="radio-set" id="ctr2">
+		<a href="#"><i class="fa fa-coffee"></i>Service</a>
+		<input type="radio"	name="radio-set" id="ctr3">
+		<a href="#"><i class="fa fa-building"></i>About</a>
+		<input type="radio"	name="radio-set" id="ctr4">
+		<a href="#"><i class="fa fa-users"></i>Team</a>
+		<input type="radio"	name="radio-set" id="ctr5">
+		<a href="#"><i class="fa fa-phone"></i>Contact</a>
+		<div class="images">
+			<ul>
+				<li id="img1">
+					<img src="image/壁纸图片1.jpg">
+				</li>
+				<li id="img2">
+					<img src="image/壁纸图片2.jpg">
+				</li>
+				<li id="img3">
+					<img src="image/壁纸图片3.jpg">
+				</li>
+				<li id="img4">
+					<img src="image/壁纸图片6.jpg">
+				</li>
+				<li id="img5">
+					<img src="image/壁纸图片8.jpg">
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

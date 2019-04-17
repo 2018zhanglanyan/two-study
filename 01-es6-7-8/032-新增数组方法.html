@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032-新增数组方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let likeArr = {
+		0:"aa",
+		1:"bb",
+		2:"cc",
+		length:3
+	}
+
+	let arr = Array.from(likeArr);
+
+	console.log(likeArr);
+	console.log(arr);
+
+
+	function fn(){
+		console.log(arguments);
+		console.log(Array.from(arguments));
+	}
+	fn(11,22);
+
+	let arr2 = [11,22,33];
+
+	let result = arr2.find(n=>n>11);
+	let arr3 = arr2.find(n=>n>22);
+
+	console.log(arr2);
+	console.log(result);
+	console.log(arr3);
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>158-对象-new的使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//new 的作用: 函数会在一开始创建一个对象，并且这个对象就是this 在函数的最后会把这个this对象返回出去
+
+	function show(){
+		console.log(this);
+		console.log('aA');
+	}
+	//window.show(); //show() 属于window
+	//如果new的话 就会生成一个对象   返回一个对象
+	console.log(new show());
+</script>
+</html>

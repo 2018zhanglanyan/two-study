@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029-选项卡案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#tab{
+			margin: 100px 300px;
+		}
+		#tab li{
+			float: left;
+			width: 80px;
+			height: 30px;
+			font-size: 16px;
+			list-style: none;
+			overflow: hidden;
+			text-align: center;
+		}
+		#content li{
+			 float: left; 
+			list-style: none;
+			width: 200px;
+			height: 300px;
+			line-height: 300px;
+			text-align: center;
+			font-size: 80px;
+			border: 1px solid #f00;
+			display: none;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="tab">
+		<li class="active">热门</li>
+		<li>电视影音</li>
+		<li>电脑</li>
+		<li>家居</li>
+	</ul>
+	<ul id="content">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn = document.querySelectorAll('#tab li');
+	var aContent = document.querySelectorAll('#content li');
+	// console.log(aBtn);
+	// console.log(aContent);
+	for (var i = 0; i < aBtn.length; i++) {
+		aBtn[i].index = i;
+		// console.log(aBtn[i].index);
+		aBtn[i].onclick = function(){
+			// console.log(i);
+			for (var j = 0; j < aBtn.length; j++) {
+				// console.log(j);
+				aBtn[j].className = '';
+				aContent[j].style.display = 'none';
+			}
+			this.className = 'active';
+			aContent[this.index].style.display = 'block';
+			// console.log(aContent[this.index]);
+		}
+	}
+</script>
+</html>

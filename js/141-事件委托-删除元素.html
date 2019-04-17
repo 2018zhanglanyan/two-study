@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>141-事件委托-删除元素.html</title>
+</head>
+<body>
+	<ul id="list">
+		<li>1<a href="#" class="del">删除</a></li>
+		<li>2<a href="#" class="del">删除</a></li>
+		<li>3<a href="#" class="del">删除</a></li>
+		<li>4<a href="#" class="del">删除</a></li>
+		<li>5<a href="#" class="del">删除</a></li>
+		<li>6<a href="#" class="del">删除</a></li>
+		<li>7<a href="#" class="del">删除</a></li>
+		<li>8<a href="#" class="del">删除</a></li>
+		<li>9<a href="#" class="del">删除</a></li>
+		<li>10<a href="#" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('list');
+	var oA = document.getElementsByTagName('a');
+	/*
+	for (var i = 0; i < oA.length; i++) {
+		oA[i].onclick = function(){
+			oUl.removeChild(this.parentNode);
+		}
+	}
+	*/
+
+	oUl.addEventListener('click',function(ev){
+		console.log(ev.target.className);
+		if (ev.target.className == 'del') {
+			oUl.removeChild(ev.target.parentNode);
+		}
+		
+	},false);
+
+</script>
+</html>

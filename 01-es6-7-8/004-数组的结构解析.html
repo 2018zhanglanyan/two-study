@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-数组的结构解析.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var a = 1,
+		b = 2,
+		c = 3;
+		console.log(a,b,c); // 1 2 3
+	*/
+
+	/*
+	var [a,b,c] = [1,2,3];
+	console.log(a,b,c); // 1 2 3
+	*/
+
+	/*
+	var [a,b,c,d] = [1,2,3];
+	console.log(a,b,c,d); // 1 2 3 undefined
+	*/
+
+	/*
+	var [a,[b,c],d] = [1,[2,3],4];
+	console.log(a,b,c,d); // 1 2 3 4
+	*/
+
+	/*
+	var [a,b,c,d] = [1,2,3,undefined];
+	console.log(a,b,c,d); // 1 2 3 undefined
+	*/
+
+	/*
+	var [a,b,c,d=66] = [1,2,3];
+	console.log(a,b,c,d); // 1 2 3 66
+	*/
+
+	/*
+	var [a,b,c,d=66] = [1,2,3,undefined];
+	console.log(a,b,c,d); // 1 2 3 66
+	*/
+
+	/*
+	var [a,b,c,d=66] = [1,2,3,null];
+	console.log(a,b,c,d); // 1 2 3 null
+	*/
+
+	var [a,b,c,d=66] = 1,2,3;
+	console.log(a,b,c,d); // 如果等号的右边不是数组,会报错
+</script>
+</html>

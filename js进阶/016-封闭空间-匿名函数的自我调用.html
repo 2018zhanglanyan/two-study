@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-封闭空间-匿名函数的自我调用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//小括号的语义
+	//()
+	/*
+	if(1){
+		console.log('aa');
+	}
+	*/
+	/*
+	var a = 'a'+ 1+ 2 + 'b';
+	console.log(a);
+	//提高优先级
+	var a = 'a'+ (1+ 2) + 'b';
+	console.log(a);
+	*/
+
+	/*
+	function show(name){
+		console.log(name);
+	}
+	show('Zhang');
+
+	*/
+
+	//函数的自我调用
+	(function(){
+		console.log('aa');
+	})();
+
+</script>
+</html>

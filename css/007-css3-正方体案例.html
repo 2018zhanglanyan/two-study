@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-css3-正方体案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			animation: sport 5s linear 0s infinite normal;
+		}
+		@keyframes sport{
+			from{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform: rotateX(360deg);
+			}
+		}
+		ul li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			line-height: 200px;
+			color: #fff;
+			font-size: 30px;
+			font-weight: 800;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		ul li:nth-child(1){
+			background: #ff6700;
+			transform: rotateX(90deg) translateZ(100px);
+		}
+		ul li:nth-child(2){
+			background: #f00;
+			transform: rotateX(0deg) translateZ(100px);
+		}
+		ul li:nth-child(3){
+			background: #1f0;
+			transform: rotateX(90deg) translateZ(-100px);
+		}
+		ul li:nth-child(4){
+			background: #00f;
+			transform: rotateX(180deg) translateZ(100px);
+		}
+		ul li:nth-child(5){
+			background: #f01;
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		ul li:nth-child(6){
+			background: #f90;
+			transform: rotateY(270deg) translateZ(100px);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

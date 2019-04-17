@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-模板字符.html</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var username = 'Zhang';
+	/*
+	oBtn.onclick = function(){
+		var html = '<ul>';
+			html += '	<li>'+username+'</li>';
+			html += '	<li>'+username+'</li>';
+			html += '	<li>'+username+'</li>';
+			html += '	<li>'+username+'</li>';
+			html += '</ul>';
+		document.body.innerHTML = html;
+	}
+	*/
+
+
+	oBtn.onclick = function(){
+		var html = `<ul>
+						<li>${username}</li>
+						<li>${username}</li>
+						<li>${username}</li>
+						<li>${username}</li>
+					</ul>`;
+		document.body.innerHTML = html;
+	}
+</script>
+</html>

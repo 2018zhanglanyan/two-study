@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040-获取样式的方法.html</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ff6700;
+			margin-top: 20px;
+		}
+		.toSkyblue{
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">变粉</button>
+	<button id="btn2">变蓝</button>
+	<button id="btn3">获取样式</button>
+
+	<div id="box"></div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+
+	var oBox = document.getElementById('box');
+
+	oBtn1.onclick = function(){
+		oBox.style.backgroundColor = 'pink';
+	}
+
+	oBtn2.onclick = function(){
+		// oBox.style.backgroundColor = 'skyblue';
+		oBox.className = 'toSkyblue';
+	}
+ 
+	oBtn3.onclick = function(){
+		// oBox.style.backgroundColor = 'skyblue';
+		// oBox.className = 'toSkyblue';
+		// 只能获取行间样式
+		alert(oBox.style.backgroundColor);
+		// 都可以获取
+		alert(getComputedStyle(oBox,false)['backgroundColor']);
+	}
+</script>
+</html>

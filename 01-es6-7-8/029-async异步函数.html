@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029-async异步函数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function fn(){
+
+	}
+	console.log(fn()); //undefined
+	*/
+
+	/*
+	async function fn(){ // 函数前面加 async 代表这个函数里面有异步处理
+
+	}
+	console.log(fn()); // promise对象 async函数返回一个 Promise 对象，可以使用then方法添加回调函数。
+	*/
+
+	async function fn(){
+		await 'hello';
+	}
+	fn();
+	// console.log(fn());
+</script>
+</html>

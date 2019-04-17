@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>038-函数的参数案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid tomato;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #5079d9;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">变宽</button>
+	<button id="btn2">变高</button>
+	<button id="btn3">变色</button>
+
+	<div id="box1">
+		
+	</div>
+	<div id="box2">
+		
+	</div>
+</body>
+<script>
+	
+	function css(obj,attr,val){
+		obj.style[attr] = val;
+	}
+
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	// console.log(oBtn1);
+	// console.log(oBtn2);
+	// console.log(oBtn3);
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	// console.log(oBox1);
+	// console.log(oBox2);
+
+	oBtn1.onclick = function(){
+		// oBox1.style.width = '200px';
+		// oBox2.style.width = '200px';
+		css(oBox1,'width','200px');
+		css(oBox2,'width','200px');
+	}
+
+	oBtn2.onclick = function(){
+		// oBox1.style.height = '200px';
+		// oBox2.style.height = '200px';
+		css(oBox1,'height','200px');
+		css(oBox2,'height','200px');
+	}
+
+	oBtn3.onclick = function(){
+		// oBox1.style.backgroundColor = 'pink';
+		// oBox2.style.backgroundColor = 'skyblue';
+		css(oBox1,'backgroundColor','pink');
+		css(oBox2,'backgroundColor','skyblue');
+	}
+</script>
+</html>

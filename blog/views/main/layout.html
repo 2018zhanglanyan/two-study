@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" id="kz-navbar">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand link" href="#">我的个人博客</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+	        <li><a href="list.html">HTML</a></li>
+	        <li><a href="list.html">CSS</a></li>
+	        <li><a href="list.html">JavaScript</a></li>
+	        <li><a href="list.html">我的足迹</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	<div class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<!-- 轮播图 -->
+					{% block content %}{% endblock %}
+				</div>
+				<div class="col-md-4 hidden-xs hidden-sm">
+					<!--用户注册登录-->
+			        <div class="user-panel" id='user-info' style="display: none;">
+			            <span>Tom</span>
+			            <a class="link" href="#">进入中心</a>
+			            <a class="link" href="#">退出</a>
+			        </div>
+			        <div class="form-horizontal user-panel" id='register' style="display: none;">
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">用户名</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">重复密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="repassword" placeholder="请再次输入密码">
+			              </div>
+			            </div>            
+			            <div class="form-group">
+			              <div class="col-sm-offset-4 col-sm-6">
+			                <a href="javascript:;" class="btn btn-primary" id='sub-register'>提交</a>
+			                <a href="javascript:;" class="link" id='go-login'>已有账号,去登录</a>
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <div class="col-sm-12">
+			                <p class="text-danger err"></p>
+			              </div>
+			            </div>            
+			        </div>
+			        <div class="form-horizontal user-panel" id='login'>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">用户名</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+			              </div>
+			            </div>            
+			            <div class="form-group">
+			              <div class="col-sm-offset-4 col-sm-6">
+			                <a href="javascript:;" class="btn btn-primary" id='sub-login'>提交</a>
+			                <a href="javascript:;" class="link" id='go-register'>免费注册</a>
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <div class="col-sm-12">
+			                <p class="text-danger err"></p>
+			              </div>
+			            </div>            
+			        </div>
+			        <!--用户注册登录-->         
+					<!-- 广告页 -->
+					<div class="ad">
+						<a href="#" class="thumbnail">
+					      <img src="images/gg1.jpg" alt="广告">
+					    </a>
+					</div>
+					<div class="ad">
+						<a href="#" class="thumbnail">
+					      <img src="images/gg2.jpeg" alt="广告">
+					    </a>
+					</div>
+					<!-- 博主介绍 -->
+					<div class="panel panel-default">
+					  	<div class="panel-heading">
+					  		<h3 class="panel-title">博主介绍</h3>
+					  	</div>
+					  	<div class="panel-body panel-content">
+					   	 	<div class="media">
+							  <div class="media-left">
+							    <a href="#">
+							      <img class="media-object img-me" src="images/me.jpg" alt="博主帅照">
+							    </a>
+							  </div>
+							  <div class="media-body">
+							    <h4 class="media-heading">Blue燕燕</h4>
+							    如果一个男生的手机壁纸是你，所有的社交密码都告诉你，那么你就取了他的钱走吧。
+							  </div>
+							</div>
+					 	</div>
+					</div>
+					<!-- 点击排行 -->
+					<div class="panel panel-default">
+					  	<div class="panel-heading">
+					  		<h3 class="panel-title">点击排行</h3>
+					  	</div>
+					  	<div class="panel-body panel-content">
+					   	 	<ul class="list-group">
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Cras justo odioCras justo odioCras justo odioCras justo odio</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Dapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis in</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Morbi leo risusMorbi leo risusMorbi leo risusMorbi leo risus</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Porta ac consectetur acPorta ac consectetur acPorta ac consectetur acPorta ac consectetur ac</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Vestibulum at erosVestibulum at erosVestibulum at erosVestibulum at eros</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Dapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis inDapibus ac facilisis in</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Morbi leo risusMorbi leo risusMorbi leo risusMorbi leo risus</a>
+							  </li>
+							  <li class="list-group-item">
+							  	<a href="detail.html" class="link text-ellipsis" target="_blabk">Vestibulum at erosVestibulum at erosVestibulum at erosVestibulum at eros</a>
+							  </li>
+							</ul>
+					 	</div>
+					</div>
+					<!-- 关注我 -->
+					<div class="panel panel-default">
+					  	<div class="panel-heading">
+					  		<h3 class="panel-title">关注我</h3>
+					  	</div>
+					  	<div class="panel-body panel-content">
+					   	 	<img src="images/erweima.png" class="img-responsive" alt="二维码">
+					 	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		Blog Design by <a href="#" class="link">Kuazhu🐖</a><a href="#" class="link">豫ICP备11002373号-1.</a>
+	</footer>
+</body>
+<script src="jquery/jquery-1.12.4.min.js"></script>
+<script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+{% block footer %}{% endblock %}
+</html>

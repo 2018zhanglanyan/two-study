@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-promise加载图片.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var img = new Image();
+
+	img.onload = function(){
+		console.log('me.jpg'+ ' loaded');
+	}
+
+	img.onerror = function(){
+		console.log('me.jpg'+ ' loaded filed');
+	}
+
+	img.src = 'images/mel.jpg';
+	*/
+
+	/*
+	function loadImg(url){
+		var img = new Image();
+
+		img.onload = function(){
+			console.log('me.jpg'+ ' loaded');
+		}
+
+		img.onerror = function(){
+			console.log('me.jpg'+ ' loaded filed');
+		}
+
+		img.src = url;
+	}
+
+	loadImg('images/me.jpg');  // 加载图片是异步程序  并不会立即执行
+	*/
+
+	/*
+	function loadImg(url,success,error){
+		var img = new Image();
+
+		img.onload = function(){
+			success(url);
+		}
+
+		img.onerror = function(){
+			error(url);
+		}
+
+		img.src = url;
+	}
+	
+	loadImg('images/me.jpg',function(url){ // 封装公用函数缺点 可读性差   层层嵌套
+		console.log(url+ '  loaded!!!');
+	},function(){
+		console.log(url+ '  loaded filed!!!');
+	});
+
+	loadImg('images/erweima.png',function(url){ // 封装公用函数缺点 可读性差   层层嵌套
+		console.log(url+ '  loaded...');
+	},function(){
+		console.log(url+ '  loaded filed...');
+	});
+	*/
+
+	/*
+	let promise = new Promise((resolve,reject)=>{
+		var img = new Image();
+		img.onload = function(){
+			resolve('images/me.jpg');
+		}
+		img.onerror = function(){
+			reject('images/me.jpg');
+		}
+		img.src = 'images/me.jpg';
+	});
+	
+	promise
+	.then(url=>{
+		console.log('images/me.jpg'+ '  loaded...');
+	},err=>{
+		console.log('images/me.jpg'+ '  loaded filed...');
+	});
+	*/
+
+
+	let getLoadImage = (url)=>{
+		return new Promise((resolve,reject)=>{
+			var img = new Image();
+			img.onload = function(){
+				resolve(url);
+			}
+			img.onerror = function(){
+				reject(url);
+			}
+			img.src = url;
+		});
+	}
+
+	getLoadImage('images/me.jpg')
+	.then(url=>{
+		console.log(url+ '  loaded!!!');
+	},url=>{
+		console.log(url+ '  loaded filed!!!');
+	})
+
+</script>
+</html>

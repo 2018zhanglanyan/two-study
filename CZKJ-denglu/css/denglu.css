@@ -1,0 +1,83 @@
+/*张燕CSS样式 */
+.denglu{
+	position: relative;
+	width: 100%;
+	height: 800px;
+	background-color: #f5f5f5;
+}
+/*登录框*/
+.denglu .denglu-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -324px;
+	margin-left: -225px;
+	width: 450px;
+	height: 550px;
+	text-align: center;
+	border: 1px solid #dadada;
+	background-color: #fff;
+	border-radius: 10px;
+}
+.denglu .denglu-box .image{
+	height: 85px;
+	margin-top: 60px;
+	background-image: url(../images/favicon.jpeg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 85px;
+}
+.denglu .denglu-box h3{
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	margin-top: 20px;
+}
+.denglu .denglu-box .user{
+	line-height: 46px;
+	margin-top: 40px;
+}
+.denglu .denglu-box .user input{
+	width: 324px;
+	height: 46px;
+	outline: none;
+}
+/*底部信息*/
+.denglu .foot{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+}
+.denglu .foot ul li{
+	display: inline-block;
+	height: 15px;
+	line-height: 15px;
+	color: #757575;
+	margin-left: 5px;
+}
+.denglu .foot ul li .link{
+	color: #5079d9;
+}
+.denglu .foot ul li .link：hover{
+	color: #406dd6;
+}
+.denglu .foot ul li span{
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	background-color: #ccc;
+	margin-left: 8px;
+	vertical-align: -2px;
+}
+.denglu .foot p{
+	height: 16px;
+	line-height: 16px;
+	margin: 10px 0px 50px 0px;
+}
+.denglu .foot p .link{
+	color: #5079d9;
+}
+.denglu .foot p .link:hover{
+	color: #406dd6;
+}

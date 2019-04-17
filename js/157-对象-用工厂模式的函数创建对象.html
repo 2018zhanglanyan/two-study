@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>157-对象-用工厂模式的函数创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//缺点: 不能用new来创建对象方法不能被实例共享,即每个对象实例都生成一个相同的方法
+	function createPerson(name,age){
+		var obj = new Object();
+
+		obj.name = name;
+		obj.age = age;
+
+		obj.sayHi = function(){
+			console.log('Hi I am ' + this.name);
+		}
+
+
+		obj.sayAge = function(){
+			console.log(' I am ' + this.age + ' years old');
+		}
+
+		return obj;
+	}
+
+	var person1 = createPerson("Tom",20);
+	console.log(person1);
+	person1.sayHi();
+	person1.sayAge();
+
+	var person2 = createPerson("Leo",18);
+	console.log(person2);
+	person2.sayHi();
+	person2.sayAge();
+
+	console.log(person1.sayHi == person2.sayHi);
+</script>
+</html>

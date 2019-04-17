@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loading-官方版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.loader{
+			position: relative;
+			width: 3px;
+			height: 15px;
+			background-color: #ff6700;
+			margin: 200px auto;
+			animation: sport 0.4s linear 0s infinite alternate; 
+		}
+		.loader:after,
+		.loader:before{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			content: '';
+			width: 3px;
+			height: 15px;
+			background-color: #ff6700;
+			transform: scale(1,0.5);
+		}
+		.loader:after{
+			margin-left: 7px;
+			animation: sport 0.5s linear 0s infinite alternate; 
+		}
+		.loader:before{
+			margin-left: -7px;
+			animation: sport 0.3s linear 0s infinite alternate; 			
+		}
+		@keyframes sport{
+			from{
+				opacity: 0.5;
+				transform: scale(1,0.5);
+			}
+			to{
+				opacity: 1;
+				transform: scale(1,1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loader"></div>
+</body>
+</html>

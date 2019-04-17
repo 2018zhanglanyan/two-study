@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>170-正则-原子筛选-区间.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = '122gdfgd5dfbn45ngbn42gdf@%';
+
+	var reg = /a|d|g|f|n/g;
+	var reg1 = /[a-z]/g;
+	var reg2 = /[0-9]/g;
+	var reg3 = /[a-z0-9]/g;
+	var reg4 = /[bgacd]/g;
+	var reg5 = /[b|g|a|c|d]/g;
+	var reg6 = /b|g|a|c|d/g;
+	console.log(str.replace(reg,'*'));
+	console.log(str.replace(reg1,'*'));
+	console.log(str.replace(reg2,'*'));
+	console.log(str.replace(reg3,'*'));
+	console.log(str.replace(reg4,'*'));
+	console.log(str.replace(reg5,'*'));
+	console.log(str.replace(reg6,'*'));
+</script>
+</html>

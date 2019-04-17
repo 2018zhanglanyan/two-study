@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-事件自动触发.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	$(function(){
+		$('div').click(function(){
+			alert('cilck :');
+		});
+		$('div').trigger('click');
+		// $('div').triggerHandher('click');
+	})
+</script>
+</html>

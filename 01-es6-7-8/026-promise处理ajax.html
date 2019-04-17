@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-promise处理ajax.html</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+	$.get('http://api.github.com/users/kuazhu',(data1)=>{
+		console.log(data1);
+		$.get(data1.followers_url,data2=>{
+			console.log(data2);
+			$.get(data2[0].followers_url,data3=>{
+				console.log(data3);	
+			});
+		});
+	});
+</script>
+</html>

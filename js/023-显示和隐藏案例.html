@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-显示和隐藏案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			display: none;
+			width: 100px;
+			height: 100px;
+			background: pink;
+			margin-left: 200px;
+		}
+		#box2{
+			/*display: none;*/
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-top: 200px;
+			margin-left: 400px;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBox1 = document.getElementById('box1');
+			var oBox2 = document.getElementById('box2');
+			// oBtn1.onclick = function(){
+			// 	oBox1.style.display = 'block';
+			// }
+			// oBtn2.onclick = function(){
+			// 	oBox2.style.display = 'none';
+			// }
+
+			oBtn1.onclick = function(){
+				if (oBox1.style.display == 'none') {
+					oBox1.style.display = 'block';
+				}else{
+					oBox1.style.display = 'none';
+				}
+			}
+			
+
+			oBtn2.onclick = function(){
+				if (oBox2.style.display == 'block') {
+					oBox2.style.display = 'none';
+				}else{
+					oBox2.style.display = 'block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="显示" id="btn1">
+	<input type="button" value="隐藏" id="btn2">
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+</html>

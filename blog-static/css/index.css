@@ -1,0 +1,9 @@
+/*轮播图样式*/
+.carousel-inner .item img{
+	width: 100%;
+	height: 420px;
+}
+/*列表样式*/
+.panel-list{
+	margin-top: 20px;
+}

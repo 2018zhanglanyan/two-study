@@ -1,0 +1,100 @@
+/*hover的公共样式*/
+.link{
+	text-decoration: none !important;
+}
+.link:hover{
+	color: #f90 !important;
+}
+.text-ellipsis{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+/*顶部导航样式*/
+#kz-navbar{
+	opacity: 0.8;
+}
+#kz-navbar .active a{
+	background-color: transparent;
+	color: #f90;
+}
+#kz-navbar .navbar-nav li{
+	margin-right: 20px;
+}
+#kz-navbar .navbar-nav a:hover{
+	color: #f90;
+}
+/*内容样式*/
+.main{
+	margin-top: 70px;
+}
+/*列表样式*/
+.panel-list .panel-heading{
+	border: none;
+	background-color: transparent;
+	padding-left: 0px;
+}
+.panel-list .panel-heading .panel-title{
+	margin-left: -1px;
+	padding-left: 15px;
+	border-left: 2px solid #f90;
+}
+.panel-list .panel-footer{
+	background-color: transparent;
+	border: none;
+}
+.panel-list .panel-footer .panel-default-text{
+	margin-right: 10px;
+}
+.panel-list:hover .panel-heading .panel-title{
+	color: #f90;
+}
+/*右边广告样式*/
+.ad .thumbnail{
+	border: none;
+	padding: 0px;
+	width: 360px;
+	height: 200px;
+	transition: all 0.3s;
+}
+.ad .thumbnail img{
+	width: 100%;
+	height: 100%;
+	border: 5px solid #f90;
+}
+.ad .thumbnail:hover{
+	box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+/*右边博主介绍*/
+.panel .panel-heading{
+	background-color: transparent;
+	border: none;
+}
+.panel .panel-content{
+	background-color: #f7f7f7;
+	padding: 10px;
+}
+.img-me{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+/*点击排行*/
+.panel-content{
+	padding: 0px;
+}
+.list-group .list-group-item{
+	border: none;
+	background-color: #f7f7f7;
+}
+.list-group .list-group-item .link{
+	color: #333;
+	display: block;
+}
+/*底部*/
+footer{
+	text-align: center;
+}
+footer a{
+	margin-left: 5px;
+}

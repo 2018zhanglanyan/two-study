@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>069-九宫格案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: relative;
+			margin-top: 20px;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">生成格子</button>
+	<div id="box">
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+	var aSon = oBox.children;
+	var oAllCol = 3;
+	var oWidth = 100;
+	var oHeight = 100;
+	var oMargin = 15;
+	oBtn.onclick = function(){
+		var newSon = aSon[0].cloneNode(true);
+		oBox.appendChild(newSon);
+		for (var i = 0; i < aSon.length; i++) {
+			var oCol = i % oAllCol;
+			var oRow = parseInt(i / oAllCol);
+			aSon[i].style.left = (oWidth + oMargin) * oCol  + 'px';
+			aSon[i].style.top = (oHeight + oMargin) * oRow + 'px';
+		}
+	}
+</script>
+</html>

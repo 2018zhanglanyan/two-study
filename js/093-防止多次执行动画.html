@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>093-防止多次执行动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+		#line{
+			position: absolute;
+			top: 50px;
+			left: 400px;
+			width: 0px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+	<div id="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var oLine = document.getElementById('line');
+	var timer = 0;
+	// 动画必要条件：
+	//1. 当前值
+	//2. 目标值
+	//3. 执行速度
+	//4. 动画结束条件
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		// oBox.style.left = '400px';
+		// console.log('timer',timer,'running');
+		timer = setInterval(function(){
+			if (oBox.offsetLeft == 400) {
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + 10 + 'px';
+			}
+		},30);
+	}
+</script>
+</html>

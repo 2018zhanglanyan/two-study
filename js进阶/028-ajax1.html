@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-ajax1.html</title>
+</head>
+<body>
+	<button id="btn">点击登录</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		// 1.生成Ajax对象
+		var oAjax = new XMLHttpRequest();
+		// 2.建立连接
+		oAjax.open('GET','http://127.0.0.1:3000/029-text.json',true);
+		// 3.发送信息
+		oAjax.send();
+		console.log(oAjax.readyState);
+		// 4.监听事件
+		oAjax.onreadystatechange = function(){
+			console.log(oAjax.readyState);
+		}
+	}
+</script>
+</html>

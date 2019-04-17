@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-操作属性.html</title>
+</head>
+<body>
+	<input type="text" name="aaa" value="haha">
+	<input type="text" name="bbb" value="hehe">
+	<input type="checkbox" checked>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// attr和prop 只能获取第一个值  区别就是attr返回的是字符串 prop返回的是布尔值
+		//获取
+		console.log($('input'));
+		console.log($('input').attr('name'));
+		console.log($('input').eq(1).attr('name'));
+		console.log($('input').prop('name'));
+
+		console.log($('input').attr('value'));
+		console.log($('input').eq(1).attr('value'));
+		console.log($('input').prop('value'));
+
+		// 区别就是attr返回的是字符串 prop返回的是布尔值
+		console.log($('input').eq(2).attr('checked'));
+		console.log($('input').eq(2).prop('checked'));
+
+		// 设置
+		// console.log($('input').attr('name','aa1'));
+		// console.log($('input').prop('name','bb1'));
+
+		// 删除
+		// console.log($('input').removeAttr('name'));
+		console.log($('input').removeProp('name'));
+	})
+</script>
+</html>

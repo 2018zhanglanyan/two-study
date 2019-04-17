@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>082-Date上面的实例方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	//toDay 也叫实例   new Date就是构造对象
+	var toDay = new Date();
+	// console.log(toDay);
+
+	console.log("getFullYear:::",toDay.getFullYear()); //返回指定日期对象的年份。
+	console.log("getMonth:::",toDay.getMonth());//返回指定日期对象的月份，从0开始（0表示一年中的第一月）。
+	console.log("getDate:::",toDay.getDate());//返回指定日期对象在月中的第几天
+	console.log("getHours:::",toDay.getHours()); //返回指定日期对象的小时。
+	console.log("getMinutes:::",toDay.getMinutes()); //返回指定日期对象的分钟数。
+	console.log("getSeconds:::",toDay.getSeconds()); //返回指定日期对象的秒数。
+	console.log("getMilliseconds:::",toDay.getMilliseconds()); //返回指定日期对象的毫秒数。
+	console.log("getTime:::",toDay.getTime()); //返回值一个数值，表示从1970-1-1 00:00:00  UTC (世界标准时间)距			离该日期对象所代表时间的毫秒数。
+	console.log("getDay:::",toDay.getDay()); //返回指定日期对象在具体日期中一周的第几天，0 表示星期天。
+	console.log("toLocaleDateString:::",toDay.toLocaleDateString()); //返回指定日期对象的年月日字符串
+	console.log("toLocaleString:::",toDay.toLocaleString()); //返回指定日期对象的年月日和时间字符串
+	console.log("toLocaleTimeString:::",toDay.toLocaleTimeString()); //返回指定日期对象的时间字符串
+
+</script>
+</html>

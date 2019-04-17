@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-居中</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 600px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+		<div class="son"></div>
+	</div>
+</body>
+</html>

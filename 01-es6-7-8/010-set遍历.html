@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-set遍历.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s = new Set([11,22,33,44,55,88]);
+
+	console.log(s);
+
+	for(let key of s.keys()){ // keys():返回键名的遍历器
+		console.log('key:::',key);
+	}
+
+	for(let value of s.values()){ // values():返回键值的遍历器
+		console.log('value:::',value);
+	}
+
+	for(let value of s){
+		console.log(':::',value);
+	}
+
+	for(let entry of s.entries()){ // entries():返回键值对的遍历器
+		console.log('entriy:::',entry);
+	}
+
+
+</script>
+</html>

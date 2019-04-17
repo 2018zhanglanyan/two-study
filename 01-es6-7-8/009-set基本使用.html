@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-set基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let arr = [];
+
+	let s = new Set();
+
+	console.log(s);
+
+	s.add(11);
+	s.add(22);
+	s.add(33); // add(value):添加某个值,返回 Set 结构本身
+
+	console.log(s);
+	console.log('size:::',s.size);
+
+	/*
+	s.delete(22);
+	console.log(s.delete(33)); // delete(value):删除某个值,返回一个布尔值,表示删除是否成功
+
+	console.log(s);
+	console.log('size:::',s.size);
+	*/
+</script>
+</html>

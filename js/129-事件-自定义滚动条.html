@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>129-事件-自定义滚动条.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#warp{
+			position: relative;
+			width: 600px;
+			height: 50px;
+			margin: 60px auto;
+			background-color: gray;
+		}
+		#btn{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 50px;
+			height: 50px;
+			background-color: #f0f;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: #f67;
+			margin-top: 40px;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="warp">
+		<div id="btn"></div>
+	</div>
+	<div id="box"></div>
+</body>
+<script>
+	var oWarp = document.getElementById('warp');
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var disX = 0;
+	oWarp.onmousedown = function(ev){
+		disX = ev.clientX - oBtn.offsetLeft;
+		// console.log(disX);
+
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			if (l < 0) {
+				l = 0;
+			}else if (l > oWarp.offsetWidth - oBtn.offsetWidth) {
+				l = oWarp.offsetWidth - oBtn.offsetWidth;
+			}
+			var scale = l / (oWarp.offsetWidth - oBtn.offsetWidth);
+			// console.log(scale);
+			oBtn.style.left = l + 'px';
+			oBox.style.width = 100 + 500 * scale + 'px'; 
+			oBox.style.height = 100 + 500 * scale + 'px'; 
+			oBox.style.opacity = scale; 
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

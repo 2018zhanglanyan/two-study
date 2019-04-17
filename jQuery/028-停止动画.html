@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-停止动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">开始动画</button>
+	<button id="btn2">停止动画</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('#btn1').on('click',function(){
+			$('div').animate({width:200},1000);
+			$('div').animate({height:200},1000);
+			$('div').animate({opacity:0.5},1000);
+		});
+		// 注意点:
+			// 如果不传参数,停止当前正在执行的动画,然后把后续的动画执行完毕
+			// 第一个参数默认是false,表示不清空,如果是true,后续动画不执行
+			// 第二个参数默认是false,表示停止在当前状态,如果是ture,则跳到正在执行动画的最后状态
+		$('#btn2').on('click',function(){
+			// $('div').stop();   // 停止当前正在执行的动画,然后把后续的动画执行完毕
+			// $('div').stop(false,false); // 停止当前正在执行的动画,然后把后续的动画执行完毕
+			// $('div').stop(true,false); // 第一个参数如果是true,后续动画不执行
+			// $('div').stop(true,true); // 第二个参数如果是true,则跳到正在执行动画的最后状态
+			$('div').stop(false,true); // 第一个参数默认是false,表示不清空  第二个参数如果是true,则跳到正在执行动画的最后状态
+		});
+	})
+</script>
+</html>

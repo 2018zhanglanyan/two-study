@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>087-延迟菜单案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#lan{
+			float: left;
+			width: 20px;
+			height: 200px;
+			background: #ccc;
+			margin: 100px 0px 0px 500px;
+		}
+		#box{
+			float: left;
+			width: 200px;
+			height: 200px;
+			background: pink;
+			margin: 100px 0px 0px 10px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="lan"></div>
+	<div id="box"></div>
+</body>
+<script>
+	var oLan = document.getElementById('lan');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	oLan.onmouseover = function(){
+		clearTimeout(timer);
+		oBox.style.display = 'block';
+	}
+	oLan.onmouseout = function(){
+		timer = setTimeout(function(){
+			oBox.style.display = 'none';
+		},500);
+	}
+	oBox.onmouseover = function(){
+		clearTimeout(timer);
+		oBox.style.display = 'block';
+	}
+	oBox.onmouseout = function(){
+		timer = setTimeout(function(){
+			oBox.style.display = 'none';
+		},500);
+	}
+</script>
+</html>

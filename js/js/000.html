@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="user" id="user">
+	<input type="text" name="password" id="password">
+</body>
+<script>
+	var oUser = document.getElementById('user');
+	var oPassword = document.getElementById('password');
+	// console.log(oUser);
+	// console.log(oPassword);
+	var reg = /^[a-z_]\w{2,7}/i;
+	var reg1 = /^\d{8,11}$/;
+	if (reg.test(oUser.value)) {
+		console.log('合法');
+	}else{
+		console.log('不合法');
+	}
+	if (reg1.test(oPassword.value)) {
+		console.log('合法');
+	}else{
+		console.log('不合法');
+	}
+</script>
+</html>

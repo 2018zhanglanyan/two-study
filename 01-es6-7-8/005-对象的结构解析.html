@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005-对象的结构解析.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var obj = {
+		username:'Tom',
+		age:18
+	}
+	// console.log(obj.username,obj.age);
+	var username = obj.username;
+	var age = obj.age;
+	console.log(username,age);
+	*/
+
+	let obj = {
+		username:'Tom',
+		age:18
+	}
+	// console.log(obj.username,obj.age);
+
+	/*
+	let {username:username1,age:age1} = obj;
+	console.log(username1,age1);
+	*/
+
+	/*
+	let {username:username,age:age} = obj;
+	console.log(username,age); //等号左边对象中的属性的值是真正被赋值的变量名,如果属性的值省略,属性的值和属性的名称相同
+	*/
+
+	/*
+	let {username,age} = obj;
+	console.log(username,age);
+	*/
+
+	/*
+	let {username,age,friend} = obj;
+	console.log(username,age,friend);
+	*/
+
+	/*
+	let {username,age,friend={username:'Leo'}} = obj;
+	console.log(username,age,friend); // 可以在等号左边设置默认值,当等号右边对象中找不到对应的属性名时默认值生效
+	*/
+
+	
+	let {username,age,friend={username:'Leo'}} = {username:'Tom',age:18,friend:'Zhang'};
+	console.log(username,age,friend);
+
+</script>
+</html>

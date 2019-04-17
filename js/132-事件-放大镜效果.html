@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>132-事件-放大镜效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#warp{
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+		#bigbox{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 350px;
+			height: 350px;
+			border: 1px solid #ccc;
+		}
+		#bigbox img{
+			width: 100%;
+			height: 100%;
+		}
+		#bigbox #meng{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: none;
+			width: 240px;
+			height: 240px;
+			background-color: rgba(250,250,80,0.5);
+			cursor: move;
+		}
+		#list{
+			position: absolute;
+			top: 365px;
+			left: 0px;
+			width: 350px;
+		}
+		#list li{
+			list-style: none;
+			float: left;
+			width: 50px;
+			height: 50px;
+			margin-right: 25px;
+			opacity: 0.5;
+		}
+		#list li:last-child{
+			margin-right: 0px;
+		}
+		#list li img{
+			width: 100%;
+			height: 100%;
+		}
+		#lagebox{
+			display: none;
+			position: absolute;
+			top: 0px;
+			left: 352px;
+			width: 600px;
+			height: 600px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		#lagebox img{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 800px;
+			height: 800px;
+		}
+		#list li.active{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="warp">
+		<div id="bigbox">
+			<img src="image/p-m-1.jpg">
+			<span id="meng"></span>
+		</div>
+		<ul id="list">
+			<li class="active"><img src="image/p-s-1.jpg"></li>
+			<li><img src="image/p-s-2.jpg"></li>
+			<li><img src="image/p-s-3.jpg"></li>
+			<li><img src="image/p-s-4.jpg"></li>
+			<li><img src="image/p-s-5.jpg"></li>
+		</ul>
+		<div id="lagebox">
+			<img src="image/p-l-1.jpg">
+		</div>
+	</div>
+</body>
+<script>
+	var aSmallImg = document.querySelectorAll('#list li');
+	var oWarp = document.getElementById('warp');
+	var oBigbox = document.getElementById('bigbox');
+	var oBigboxImg = document.querySelector('#bigbox img');
+	var oMeng = document.querySelector('#bigbox #meng');
+	var oLagebox = document.getElementById('lagebox');
+	var oLageboxImg = document.querySelector('#lagebox img');
+	for (var i = 0; i < aSmallImg.length; i++) {
+		aSmallImg[i].index = i;
+		aSmallImg[i].onmouseover = function(){
+			for (var j = 0; j < aSmallImg.length; j++) {
+				aSmallImg[j].className = '';
+			}
+			this.className = 'active';
+			oBigboxImg.src = 'image/p-m-'+(this.index+1)+'.jpg';
+			oLageboxImg.src = 'image/p-l-'+(this.index+1)+'.jpg';
+		}
+	}
+	oBigbox.onmouseover = function(ev){
+		oMeng.style.display = 'block';
+		oLagebox.style.display = 'block';
+
+		oMeng.onmousemove = function(ev){
+			var l = ev.clientX - oWarp.offsetLeft - oMeng.offsetWidth * 0.5;
+			var t = ev.clientY - oWarp.offsetTop - oMeng.offsetHeight * 0.5;
+			// console.log(l,t);
+			if (l < 0) {
+				l = 0;
+			}else if (l >= oBigbox.offsetWidth - oMeng.offsetWidth) {
+				l = oBigbox.offsetWidth - oMeng.offsetWidth;
+			}
+			if (t < 0) {
+				t = 0;
+			}else if (t >= oBigbox.offsetHeight - oMeng.offsetHeight) {
+				t = oBigbox.offsetHeight - oMeng.offsetHeight;
+			}
+			oMeng.style.left = l + 'px';
+			oMeng.style.top = t + 'px';
+			// console.log(l,t);
+			var bigX = l / (oBigbox.offsetWidth - oMeng.offsetWidth);
+			var bigY = t / (oBigbox.offsetHeight - oMeng.offsetHeight);
+
+			oLageboxImg.style.left = bigX * (oLagebox.offsetWidth - oLageboxImg.offsetWidth) + 'px';
+			oLageboxImg.style.top = bigY * (oLagebox.offsetHeight - oLageboxImg.offsetHeight) + 'px';
+
+			// console.log(oLageboxImg.style.left);
+			// console.log(oLageboxImg.style.top);
+
+			// console.log(bigX,bigY);
+		}
+		oBigbox.onmouseout = function(){
+			oMeng.style.display = 'none';
+			oLagebox.style.display = 'none';
+		}
+	}
+	
+</script>
+</html>

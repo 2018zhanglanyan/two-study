@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030-选项卡案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#btn{
+			overflow: hidden;
+		}
+		#btn li{
+			float: left;
+			height: 30px;
+			margin-left: 30px;
+			margin-left: 200px;
+			font-size: 20px;
+		}
+		#content{
+			margin-top: 50px;
+		}
+		#content li{
+			height: 300px;
+			width: 300px;
+			line-height: 300px;
+			text-align: center;
+			font-size: 60px;
+			font-weight: 700;
+			border: 1px solid #000;
+			margin-left: 200px;
+			display: none;
+		}
+		.active{
+			color: #ff6700;
+			border-bottom: 2px solid #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="btn">
+		<li class="active">热门</li>
+		<li>电视影音</li>
+		<li>电影</li>
+		<li>家居</li>
+	</ul>
+	<ul id="content">
+		<li style="display: block;">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	var aBtn = document.querySelectorAll('#btn li');
+	var aContent = document.querySelectorAll('#content li');
+	// console.log(aBtn);
+	// console.log(aContent);
+	for (var i = 0; i < aBtn.length; i++) {
+		// console.log(typeof aBtn[i]);
+		// console.log(i);
+		aBtn[i].index = i;
+		aBtn[i].onclick = function(){
+			// console.log(aBtn[i]);
+			// console.log(i);
+			for (var j = 0; j < aBtn.length; j++) {
+				aBtn[j].className = '';
+				aContent[j].style.display = 'none';
+			}
+			this.className = 'active';
+			aContent[this.index].style.display = 'block';
+		}
+	}
+</script>
+</html>

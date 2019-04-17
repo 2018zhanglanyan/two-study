@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-变量的作用域.html</title>
+	<script>
+		
+		console.log(a);//undefined
+		var a = 1;
+		function fn(){
+			console.log(a);  //声明的提升   undefined
+			var a = 2;
+			// console.log(a); 2
+		}
+		fn();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005-对象属性的-访问.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.showName = function(){
+		console.log('I am ' + this.name);
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am ' + this.age + ' years old');
+	}
+	var p1 = new Person('Tom',18);
+	var p2 = new Person('Leo',20);
+	
+	console.log(p1);
+	console.log(p2);
+
+	p1.showName();
+	p1.showAge();
+</script>
+</html>

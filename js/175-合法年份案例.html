@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>175-合法年份案例.html</title>
+</head>
+<body>
+	<textarea name="text" id="txt" cols="30" rows="10"></textarea>
+	<button id="btn">检查</button>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var str = oTxt.value;
+		var reg = /[1-2]\d{3}/;
+		// console.log(str.replace(reg,''));
+		if (reg.test(str)) {
+			console.log('合法');
+		}else{
+			console.log('不合法');
+		}
+	}
+</script>
+</html>

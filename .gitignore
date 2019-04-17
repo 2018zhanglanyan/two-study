@@ -1,0 +1,7 @@
+*.jpg
+*.png
+**/font-awesome/
+**/Fonts/
+**/Fonts图片/
+**/node_modules/
+**/db

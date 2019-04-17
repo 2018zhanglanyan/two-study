@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-css3-旋轉二級菜單.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #f00;
+			margin: 100px auto;
+		}
+		ul{
+			list-style: none;
+			float: left;
+			margin-left: 12px;
+		}
+		ul li{
+			width: 150px;
+			height: 90px;
+			line-height: 90px;
+			text-align: center;
+			background: pink;
+			color: #fff;
+			font-size: 24px;
+		}
+		ul li:nth-child(1){
+			background: skyblue;
+			margin-top: 0px;
+		}
+		ul li:nth-child(1)~li{
+			opacity: 0;
+			transform: rotateY(180deg);
+		}	
+		ul li:nth-child(1):hover~li{
+			opacity: 1;
+			transform: rotateY(360deg);
+		}
+		ul li:nth-child(1):hover~ li:nth-child(2){
+			transition: all 1s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(3){
+			transition: all 2s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(4){
+			transition: all 3s;
+		}
+		ul li:nth-child(1):hover~ li:nth-child(5){
+			transition: all 4s;
+		}
+		ul li:nth-child(1)~ li:nth-child(2){
+			transition: all 4s;
+		}
+		ul li:nth-child(1)~ li:nth-child(3){
+			transition: all 3s;
+		}
+		ul li:nth-child(1)~ li:nth-child(4){
+			transition: all 2s;
+		}
+		ul li:nth-child(1)~ li:nth-child(5){
+			transition: all 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>一級菜單</li>
+			<li>二級菜單</li>
+			<li>三級菜單</li>
+			<li>四級菜單</li>
+			<li>五級菜單</li>
+		</ul>
+		<ul>
+			<li>一級菜單</li>
+			<li>二級菜單</li>
+			<li>三級菜單</li>
+			<li>四級菜單</li>
+			<li>五級菜單</li>
+		</ul>
+		<ul>
+			<li>一級菜單</li>
+			<li>二級菜單</li>
+			<li>三級菜單</li>
+			<li>四級菜單</li>
+			<li>五級菜單</li>
+		</ul>
+	</div>
+</body>
+</html>

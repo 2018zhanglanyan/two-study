@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		button{
+			width: 60px;
+			height: 30px;
+		}
+		div{
+			position: absolute;
+			left: 100%;
+			width: 200px;
+			height: 200px;
+			background-color: gold;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var solient = {
+			show:function($elem){
+				$elem.trigger('show:::');
+				$elem.show();
+			},
+			hide:function($elem){
+				$elem.trigger('hide:::');
+				$elem.hide();
+			}
+		}
+		var $elem = $('div');
+		$('button').eq(0).on('click',function(){
+			solient.show($elem);
+		});
+		$('button').eq(1).on('click',function(){
+			solient.hide($elem);
+		});
+	});
+</script>
+</html>

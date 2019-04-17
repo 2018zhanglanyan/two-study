@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>155-对象-用js内置的构造函数创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//缺点:内置构造函数都是有特定功能的 用内置构造函数来创建自定义的对象,会存在把内置构造函数生成的对象自带的方法和属性覆盖掉的风险
+	var person = new Array();
+	person.name = "Tom";
+	person.age = 18,
+	/*
+	person.sort = function(){
+		console.log('Hi');
+	}
+	*/
+	console.log(person);
+	person.sort();
+	console.log(person);
+</script>
+</html>

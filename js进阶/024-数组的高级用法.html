@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024-数组的高级用法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [1,2,13,24,35,46];
+	console.log(arr);
+	/*
+	var arr1 = arr.forEach(function(value,index){
+		console.log('value,index',value,index);
+	});
+	*/
+	/*
+	var arr2 = arr.map(function(value,index){
+		console.log('value,index',value,index);
+		return value * 10;
+	});
+	console.log(arr2);
+	*/
+	/*
+	var arr3 = arr.filter(function(value,index){
+		console.log('value,index',value,index);
+		return value > 10;
+	});
+	console.log(arr3);
+	*/
+	/*
+	var arr4 = arr.every(function(value,index){
+		console.log('value,index',value,index);
+		return value > 0;
+	});
+	console.log(arr4);
+	*/
+	var arr5 = arr.some(function(value,index){
+		console.log('value,index',value,index);
+		return value > 20;
+	});
+	console.log(arr5);
+</script>
+</html>

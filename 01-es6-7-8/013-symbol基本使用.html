@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-symbol基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	let s = new Symbol(); // 报错 Symbol is not a constructor
+	console.log(s);
+	*/
+
+
+	let s = Symbol(['symbol for Tom','symbol for Leo']);
+
+	let obj = {
+		[s]:'Tom',
+		age:18
+	}
+
+	console.log(s);
+</script>
+</html>

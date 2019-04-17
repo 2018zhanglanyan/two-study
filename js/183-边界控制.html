@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>183-边界控制.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">检查</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('txt');
+	oBtn.onclick = function(){
+		//^  匹配字符串开始的位置,限制必须以其后面的原子开头,前面不能有任何东西
+		//$  匹配字符串结尾的位置,限制必须以其前面的原子结束,后面不能有任何东西
+		var reg = /^1[3|5|7|8]\d{9}$/;
+		if (reg.test(oTxt.value)) {
+			alert('合法');
+		}else{
+			alert('不合法');
+		}
+	}
+</script>
+</html>

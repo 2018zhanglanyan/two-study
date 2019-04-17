@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>121-跟随鼠标移动多个物体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 50px;
+			height: 50px;
+			background-image: url(image/xiaohuangji.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var aDiv = document.getElementsByTagName('div');
+	document.onmousemove = function(ev){
+		aDiv[0].style.left = getScrollLeft() + ev.clientX + 'px';
+		aDiv[0].style.top = getScrollTop() + ev.clientY + 'px';
+
+		for (var i = aDiv.length-1; i > 0 ; i--) {
+			aDiv[i].style.left = aDiv[i-1].offsetLeft + 50 + 'px'; 
+			aDiv[i].style.top = aDiv[i-1].offsetTop + 10 + 'px'; 
+		}
+	}
+</script>
+</html>

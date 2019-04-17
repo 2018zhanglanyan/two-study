@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-面向对象-拖拽.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Dag(options){
+		// 1.罗列属性
+		this.oBox = null;
+		this.width = options.width;
+		this.height = options.height;
+		this.background = options.background;
+		this.disX = 0;
+		this.disY = 0;
+		// 2.初始化
+		this.init();
+		// 3.绑定事件
+		this.bindEvent();
+	}
+	Dag.prototype.init = function(){
+		this.oBox = document.createElement('div');
+		// console.log(oBox);
+		document.body.appendChild(this.oBox);
+		this.oBox.style.position = 'absolute';
+		this.oBox.style.top = 0;
+		this.oBox.style.left = 0;
+		this.oBox.style.width = this.width + 'px';
+		this.oBox.style.height = this.height + 'px';
+		this.oBox.style.background = this.background;
+	}
+
+	Dag.prototype.bindEvent = function(){
+		this.oBox.onmousedown = function(ev){
+			// console.log(this);
+			var oEvent = ev || event;
+			this.disX = oEvent.clientX - this.oBox.offsetLeft;
+			this.disY = oEvent.clientY - this.oBox.offsetTop;
+			/*
+			document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				this.oBox.style.left = oEvent.clientX - this.disX + 'px';
+				this.oBox.style.top = oEvent.clientY - this.disY + 'px';
+			}.bind(this);
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+			*/
+
+			document.onmousemove = this.fnMove.bind(this);
+			document.onmouseup = this.fnUp;
+		}.bind(this);
+	}
+
+	Dag.prototype.fnMove = function(ev){
+		var oEvent = ev || event;
+		// console.log(this);
+		this.oBox.style.left = oEvent.clientX - this.disX + 'px';
+		this.oBox.style.top = oEvent.clientY - this.disY + 'px';
+	}
+
+	function LimitDag(options){
+		Dag.call(this,options);
+		LimitDag.prototype = Object.create(Dag.prototype);
+		LimitDag.prototype.constructor = LimitDag;
+	}
+
+	// LimitDag.prototype.fnMove = function(){
+
+	// }
+
+	Dag.prototype.fnUp = function(){
+		document.onmousemove = null;
+		document.onmouseup = null;
+	}
+	new Dag({
+		width:100,
+		height:100,
+		background:'red'
+	});
+
+	new Dag({
+		width:200,
+		height:200,
+		background:'yellow'
+	});
+
+	new LimitDag({
+		width:300,
+		height:300,
+		background:'tomato'
+	});
+</script>
+</html>

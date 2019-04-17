@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function getSymmetryNum(start,end) {
+	    var arr = [];
+	    for(var i = start; i < end; i++) {
+	        if (i.toString() == i.toString().split('').reverse().join('') && i.toString().length > 1) {
+	            arr.push(i);
+	        }
+	    }
+	    return arr;
+	}
+	console.log(getSymmetryNum(1,1000));
+	function isH(str,end){
+		var arr = [];
+		for(var i = str;i<end;i++){
+			var dd = i.toString().split('').reverse().join('');
+			if(i == dd){
+				arr.push(i);
+			}	
+		}
+		return arr;
+	}
+	var a = isH(1,10000);
+	console.log(a)
+
+</script>
+</html>

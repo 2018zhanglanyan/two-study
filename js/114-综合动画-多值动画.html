@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>114-综合动画-多值动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			background-color: #f00;
+			opacity: 0.5;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">变化</div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var oDiv1 = document.getElementById('div1');
+
+	var timer = 0;
+	oDiv1.onmouseover = function(){
+		animate(oDiv1,{width:400,height:400,opacity:100},true,function(){
+			animate(oDiv1,{top:200,left:200});
+		});
+	}
+
+</script>
+</html>

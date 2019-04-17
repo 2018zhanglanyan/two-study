@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>039-不定参数案例-求和.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function num(n1,n2){
+		alert(n1+n2);
+	}
+	num(5,2);
+	*/
+
+	function num(){
+		var result = 0;
+		for (var i = 0; i < arguments.length; i++) {
+			result = result + arguments[i];
+			// console.log(i);
+			// alert(result);
+		}
+		alert(result);
+	}
+	num(2,3,4,5,6,1,5,5,5);
+</script>
+</html>

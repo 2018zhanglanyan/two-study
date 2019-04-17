@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-闭包的作用-函数节流throttle.html</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	function throttle(fn,writ){
+		var lastTimer = Date.now();
+		return function(){
+			var newTimer = Date.now();
+			if (newTimer - lastTimer > writ) {
+				fn();
+				lastTimer = Date.now();
+			}
+		}
+	}
+
+	/*
+	var i = 0;
+	window.onscroll = function(){
+		console.log(i++);
+	}
+	*/
+
+	var i = 0;
+	window.onscroll = throttle(function(){
+		console.log(i++);
+	},500);
+</script>
+</html>

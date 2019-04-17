@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-jquery对象的常见方法.html</title>
+</head>
+<body>
+	<div></div>
+	<div class="div1">div1</div>
+	<div class="div2">div2</div>
+	<div class="div3">div3</div>
+	<div class="div4">div4</div>
+	<div class="div5">div5</div>
+	<div><p class="a">哈哈</p></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($(document.getElementsByTagName('div')));
+		console.log($('div').eq(2));
+		console.log($('div').eq(-1));
+		console.log($('div:eq(1)'));
+		console.log($('div:eq(-1)'));
+		console.log($('div:empty'));
+		console.log($('div:parent'));
+		console.log($('div:contains(div5)'));
+		console.log($('div:has(.a)'));
+		console.log($());
+	})
+</script>
+</html>

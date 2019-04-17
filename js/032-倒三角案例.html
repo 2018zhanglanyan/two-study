@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032-倒三角案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.kong{
+			display: inline-block; 
+			width: 20px;
+			height: 20px;
+		}
+		.xing{
+			display: inline-block; 
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	for (var i = 0; i < 5; i++) {
+		document.write('<br>');
+		for (var k = 0; k < 5-i; k++) {
+			console.log(k);
+			document.write('<span class="kong"></span>');
+		}
+		for (var j = 0; j <= i; j++) {
+			// console.log(j);
+			document.write('<span class="xing">*</span>');
+		}
+	}
+</script>
+</html>

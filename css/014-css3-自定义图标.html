@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-css3-自定义图标.html</title>
+	<!-- 有两个缺点： 1. 这样的话需要很多图片   2.  如果把图片放大的话会很模糊不清晰  -->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 81px;
+			height: 83px;
+			margin: 0 auto;
+			background-image: url(Fonts图片/fonts.jpg);
+			background-repeat: no-repeat;
+			background-position: -83px 0px;
+		}
+		.box:hover{
+			background-position: -83px -66px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

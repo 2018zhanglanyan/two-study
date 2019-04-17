@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>039-ajax2.html</title>
+</head>
+<body>
+	<button>GET请求</button>
+	<button>POST请求</button>
+	<button>getJSON请求</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).on('click',function(){
+			$.get('./037-data.json',{name:'Tom',age:18},function(data){
+				console.log('get');
+			},'json');
+		});
+		$('button').eq(1).on('click',function(){
+			$.post('./037-data.json',{name:'Tom',age:18},function(data){
+				console.log('post');
+			},'text');
+		});
+		$('button').eq(2).on('click',function(){
+			$.getJSON('./037-data.json',{name:'Tom',age:18},function(){
+				console.log('getJSON');
+			});
+		});
+	})
+</script>
+</html>

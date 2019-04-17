@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>116-事件-添加事件处理程序.html</title>
+</head>
+<body>
+	<button id="btn1">点击</button>
+	<button id="btn2">移除事件</button>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+
+	function sayHi(){
+		alert('haha');
+	}
+
+	function sayHello(){
+		alert('xixi');
+	}
+
+	// 不能同时执行两个   谁在后面就显示谁
+	// oBtn1.onclick = sayHi;
+	// oBtn1.onclick = sayHello;
+
+	// 可以同时显示
+	oBtn1.addEventListener('click',sayHi,false);
+	oBtn1.addEventListener('click',sayHello,false);
+	oBtn1.addEventListener('click',function(){
+		alert('hehe');
+	},false);
+
+	// 移除事件    匿名函数是不能被移除的
+	oBtn2.addEventListener('click',function(){
+		oBtn1.removeEventListener('click',sayHi,false);
+	},false);
+</script>
+</html>

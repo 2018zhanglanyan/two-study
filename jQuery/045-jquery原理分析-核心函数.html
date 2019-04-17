@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>045-jquery原理分析-核心函数.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<!-- <script src="js/kquery-1.0.0.js"></script> -->
+<script>
+	// 布尔值
+	console.log($(false));
+	console.log($(''));
+	console.log($(0));
+	console.log($(null));
+	console.log($(undefined));
+	console.log($(NaN));
+	// 函数
+	console.log($(function(){
+
+	}));
+	// 字符串
+	console.log($('<h1>我是大标题</h1>'));
+	// 数组
+	// 真数组
+	var arr = [1,5,54,6];
+	console.log($(arr));
+	// 假数组
+	var wei = {0:'aa',1:'bb',length:2};
+	console.log($(wei));
+	// 对象
+	// 普通对象
+	var obj = {name:'Tom',age:18};
+	console.log($(obj));
+	// DOM对象
+	var dom = document.getElementsByTagName('div');
+	console.log($(dom));
+</script>
+</html>

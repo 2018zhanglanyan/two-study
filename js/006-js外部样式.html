@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-js导入样式.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			margin: 100px auto;
+		}
+	</style>
+	<script>
+		function toChange(){
+			var oBox = document.getElementById('box');
+			oBox.style.width='200px';
+			oBox.style.height='200px';
+			oBox.style.backgroundColor='skyblue';
+		}
+	</script>
+</head>
+<body>
+	<div id="box" onclick="toChange()"></div>
+</body>
+</html>

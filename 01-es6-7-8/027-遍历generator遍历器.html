@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-遍历generator遍历器.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(){
+		let a = yield (1);
+		let b = yield (2);
+		let c = yield (3);
+		let d = yield (4);
+		let e = yield (5);
+	}
+	let g = gen();
+	/*
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	*/
+
+	for( let v of g){
+		console.log(v);
+	}
+</script>
+</html>

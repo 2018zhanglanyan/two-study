@@ -1,0 +1,14 @@
+/*左边内容*/
+.content{
+	min-height: 600px;
+}
+.panel .sub-title .muted{
+	margin-right: 10px;
+}
+.panel-title{
+	font-size: 26px;
+	font-weight: 800;
+}
+.sub-title{
+	padding-top: 10px;
+}

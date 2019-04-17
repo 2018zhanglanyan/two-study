@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>159-对象-用new关键字和工厂函数创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// 注意点: 工厂模式函数中创建对象和返回对象省略,用this代替 用new后,把工厂模式函数可以看做是类,类名一般首字母大写
+	// 缺点: 方法不能被实例共享
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+
+		this.sayHi = function(){
+			console.log("Hi I am " + this.name);
+		}
+
+		this.sayAge = function(){
+			console.log("Hi I am " + this.age + " years old");
+		}
+	}
+	var person = new Person("Tom",18);
+	console.log(person);
+	person.sayHi();
+	person.sayAge();
+
+	var person2 = new Person("Leo",68);
+	console.log(person2);
+	person2.sayHi();
+	person2.sayAge();
+
+	console.log(person.sayHi == person2.sayHi);
+</script>
+</html>

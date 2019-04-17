@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040-ajax3.html</title>
+</head>
+<body>
+	<button>获取数据</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			var jqXHR = $.ajax({
+				url:'040-ajax3.html',
+				success:function(data,status,jqXHR){
+					console.log(typeof data);
+					console.log('1::::');
+					// console.log(JSON.parse(data).name);
+					console.log(status);
+					console.log(jqXHR);
+				}
+			});
+			console.log(jqXHR);
+			jqXHR.done(function(data,status,jqXHR){
+				console.log('1::::');
+				console.log(data);
+				console.log(status);
+				console.log(jqXHR);
+			});
+			jqXHR.fail(function(jqXHR,status){
+				console.log('2::::');
+				console.log(status);
+				console.log(jqXHR);
+			});
+			jqXHR.always(function(jqXHR,status){
+				console.log('3::::');
+				console.log(status);
+				console.log(jqXHR);
+			});
+		});
+	})
+</script>
+</html>

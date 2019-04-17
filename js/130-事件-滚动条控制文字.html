@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>130-事件-滚动条控制文字.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: relative;
+			width: 500px;
+			height: 600px;
+			margin: 50px auto;
+		}
+		#content{
+			position: relative;
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#warp{
+			position: absolute; 
+			top: 0px;
+			left: 402px;
+			width: 20px;
+			height: 402px;
+			background-color: gray;
+		}
+		#btn{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 20px;
+			height: 30px;
+			background-color: #ff0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<div id="content">
+			<div id="box">
+				电影烂翻译看完洗眼睛
+				2天前 - 今日神段丨这么内涵的招牌,也就中国小商贩敢挂 自古民间出人才,这么不可描述的骚招牌,也就中国小商贩挂得出来哈哈哈 字媒体 2018-12-12 2 趣...
+				https://pinyin.sogou.com/zimeiti/  - 百度快照
+				今日神段丨冷笑话我听多了,但这么正宗的还真是第一次见哈哈哈嗝...
+				2018年4月20日 - 今日神段是微信公众号「字媒体」出品的趣味表达栏目 策划丨winterris 编辑&制图丨winterris 素材来源丨网络 ▼ 给女友发照片一定要小心丨爆笑口误笑不...
+				www.37txt.cn/a/7751/17...  - 百度快照
+				今日神段丨拼命想脱单,却连异性的暗示都不懂! - 搜狗字媒体
+
+				2018年10月19日 - 返回字媒体首页 >> 今日神段丨拼命想脱单,却连异性的暗示都不懂!作者:字媒体 标签: 情感;神段;两性 ...
+				https://pinyin.sogou.com/zimei...  - 百度快照
+				今日神段丨世界上最紧张刺激的事情之一:妈妈在家的时候点外卖!
+
+				2018年7月16日 - 今日神段是微信公众号「字媒体」出品的趣味表达栏目 策划丨winterris 编辑&制图丨winterris 素材来源丨网络 ▼ 起个网名都这么有故事吗丨女生们的好色才是真疯狂 ...
+				https://baijiahao.baidu.com/s?...  - 百度快照
+				今日神段丨最打脸的谎言:我今天一定要早睡! - 搜狗字媒体
+				2018年10月22日 - 让我们大家一起争做早睡星人。好啦,留言区见啦 今日神段是微信公众号「字媒体」出品的趣味表达栏目 策划丨winterris 编辑&制图丨winterris 素材来源丨...
+				https://pinyin.sogou.com/zimei...  - 百度快照
+				字媒体 - 熊掌号
+				字媒体编辑资料 字媒体 百家号 关注0 粉丝1650 最有趣的汉字汉语文化平台...今日神段丨小姐妹间黄暴有料的聊天记录一旦曝光,双方都得完蛋! 23阅读 0评论...
+				author.baidu.com/home/...  - 百度快照
+				今日神段
+
+				2018年7月2日 - 今日神段 2018-07-02 | 阅: 转: | 分享 ▼ 以前 总说不要跟陌生人说话 我倒是鼓励现在的成年人多...
+				www.360doc.com/content...  - 百度快照
+				今日神段丨微博里最精彩的不是段子,而是那些有故事的抢镜网名! 字...
+
+				2018年7月13日 - 今日神段是微信公众号「字媒体」出品的趣味表达栏目 策划丨winterris 编辑&制图丨winterris 素材来源丨网络 ▼ 女生们的好色才疯狂丨当年老师的段子没...
+				www.00ke.net/v/...  - 百度快照
+				今日神段丨劝00后找代课一定要谨慎,一不小心就是翻车现场哈...-搜狐
+
+				2018年11月4日 - 今日神段丨劝00后找代课一定要谨慎,一不小心就是...「本文转自字媒体(zimeiti-sogou),已获得授权」 ▼...
+				www.sohu.com/a/...  - 百度快照
+				今日神段丨有哪些你听信了很久的谣言?_字媒体公众号文章
+				2017年6月20日 - 今日神段丨有哪些你听信了很久的谣言?作者:字媒体 来源:字媒体 公众号 分享到: 06-16 收藏 一直觉得年少无知,导致我们对世界有很多误解,这些误解现...
+				www.weixinyidu.com/n_5...  - 百度快照
+				2018年7月13日 - 今日神段是微信公众号「字媒体」出品的趣味表达栏目 策划丨winterris 编辑&制图丨winterris 素材来源丨网络 ▼ 女生们的好色才疯狂丨当年老师的段子没...
+				www.00ke.net/v/...  - 百度快照
+				今日神段丨劝00后找代课一定要谨慎,一不小心就是翻车现场哈...-搜狐
+
+				2018年11月4日 - 今日神段丨劝00后找代课一定要谨慎,一不小心就是...「本文转自字媒体(zimeiti-sogou),已获得授权」 ▼...
+				www.sohu.com/a/...  - 百度快照
+				今日神段丨有哪些你听信了很久的谣言?_字媒体公众号文章
+				2017年6月20日 - 今日神段丨有哪些你听信了很久的谣言?作者:字媒体 来源:字媒体 公众号 分享到: 06-16 收藏 一直觉得年少无知,导致我们对世界有很多误解,这些误解现...
+				www.weixinyidu.com/n_5...  - 百度快照
+			</div>
+		</div>
+		<div id="warp">
+			<div id="btn"></div>
+		</div>
+	</div>
+	
+</body>
+<script>
+	var oBox1 =document.getElementById('box1');
+	var oBox = document.getElementById('box');
+	var oWarp = document.getElementById('warp');
+	var oBtn = document.getElementById('btn');
+	var oContent = document.getElementById('content');
+	var disY = 0;
+	var t = 0;
+	oBtn.onmousedown = function(ev){
+		disY = ev.clientY - oBtn.offsetTop;
+		document.onmousemove = function(ev){
+			t = ev.clientY - disY;
+			// console.log(t);
+			handleMove();
+		}
+		oBox1.onmousewheel = function(ev){
+			if (ev.wheelDelta > 0 ) {
+				t += 10;
+			}else{
+				t -= 10;
+			}
+			handleMove();
+		}
+		function handleMove(){
+			if (t < 0) {
+				t = 0;
+			}else if (t > oWarp.offsetHeight - oBtn.offsetHeight) {
+				t = oWarp.offsetHeight - oBtn.offsetHeight;
+			}
+			var scale = t / (oWarp.offsetHeight - oBtn.offsetHeight);
+			oBtn.style.top = t + 'px';
+			oBox.style.top = -(oBox.offsetHeight - oContent.offsetHeight) * scale  + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

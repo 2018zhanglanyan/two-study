@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-generator处理ajax请求.html</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+
+	let getDataPromise = (url)=>{
+		return new Promise((resolve,reject)=>{
+			$.get(url,data=>{
+				resolve(data);
+			});	
+		});
+	}
+
+	function * gen(url){
+		let data1 = yield getDataPromise(url);
+		let data2 = yield getDataPromise(data1);
+		let data3 = yield getDataPromise(url);
+	}
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>041-设置样式和获取样式.html</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ff6700;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">设置样式</button>
+	<button id="btn2">获取样式</button>
+
+	<div id="box"></div>
+</body>
+<script>
+	// function css(){
+	// 	if (arguments.length == 2) {
+	// 		return alert(getComputedStyle(arguments[0],false)[arguments[1]]);
+	// 	}else{
+	// 		arguments[0].style[arguments[1]] = arguments[2];
+	// 	}
+	// }
+	function css(obj,attr,val ){
+		if (arguments.length == 2) {
+			return alert(getComputedStyle(oBox,false)[attr]);
+		}else{
+			obj.style[attr] = val;
+		}
+	}
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBox = document.getElementById('box');
+
+	oBtn1.onclick = function(){
+		// oBox.style.width = '200px';
+		css(oBox,'width','200px');
+	}
+	oBtn2.onclick = function(){
+		// alert(oBox.style.width);
+		// alert(getComputedStyle(oBox,false)['width']);
+		css(oBox,'width');
+	}
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>085-数码时钟-图片版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#timer{
+			width: 500px;
+			height: 100px;
+			margin: 100px auto;
+			text-align: center;
+			font-size: 60px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<img src="image/1.png">
+		<img src="image/9.png">
+		:
+		<img src="image/4.png">
+		<img src="image/1.png">
+		:
+		<img src="image/5.png">
+		<img src="image/6.png">
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	var aImg = oTimer.children;
+	// console.log(aImg);
+
+	function to2Str(num){
+		return num<10 ? "0"+num : ""+num;
+	}
+	function handTimer(){
+		var toDay = new Date();
+		var iHour = toDay.getHours();
+		// console.log(iHour);
+		var iMinute = toDay.getMinutes();
+		// console.log(iMinute);
+		var iSecond = toDay.getSeconds();
+		// console.log(iSecond);
+		var sTimer = to2Str(iHour) + to2Str(iMinute) + to2Str(iSecond);
+		// console.log(sTimer);
+		for (var i = 0; i < aImg.length; i++) {
+			aImg[i].src = "image/"+sTimer.charAt(i)+".png";
+			// aImg[i].src = "image/"+sTimer[i]+".png";
+		}
+	}
+	setInterval(handTimer,1000);
+	handTimer();
+</script>
+</html>

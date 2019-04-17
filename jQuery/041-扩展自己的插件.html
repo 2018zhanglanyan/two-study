@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>041-扩展自己的插件.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>改变样式</button>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	console.log($.prototype === $.fn);
+	$.prototype.serColor = function(){
+		console.log(this);
+	}
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$('div').css("width","300px");
+			// $('div').css("height","300px");
+			// $('div').setColor();
+		});
+	})
+</script>
+</html>

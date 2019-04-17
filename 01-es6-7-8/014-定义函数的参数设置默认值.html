@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-定义函数的参数设置默认值.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function show(name,age){
+		console.log(name,age);
+	}
+	show();
+	*/
+
+	/*
+	function show(name,age){ // 不传参的时候 设置默认值
+		name = name || "Tom";
+		age = age || 20;
+		console.log(name,age);
+	}
+	show();
+	*/
+
+	/*
+	function show(name="Tom",age=18){ // 不传参的时候 设置默认值
+		console.log(name,age);
+	}
+	show();
+	*/
+
+	/*
+	function show(name="Tom",age){
+		console.log(name,age);
+	}
+	show(,30);
+	*/
+
+	function show(age,name="Tom"){ // 默认值参数应该写在参数列表的尾部,在调用时传入前面没有默认值的参数就可以了
+		console.log(name,age);
+	}
+	show(18);
+</script>
+</html>

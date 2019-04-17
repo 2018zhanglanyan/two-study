@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-面向对象-继承一.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.sayName = function(){
+		console.log('I am ' + this.name);
+	}
+	Person.prototype.sayAge = function(){
+		console.log('I am ' + this.age + ' years old');
+	}
+
+	function Student(name,age,mongiy){
+		this.name = name;
+		this.age = age;
+		this.mongiy = mongiy;
+	}
+	Student('Tom',20,'艺术');
+	console.log(Student.name);
+</script>
+</html>

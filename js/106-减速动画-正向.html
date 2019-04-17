@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>106-减速动画-正向.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#btn{
+			width: 100px;
+			height: 30px;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+		}
+		.line{
+			position: absolute;
+			top: 50px;
+			left: 400px;
+			width: 1px;
+			height: 500px;
+			background-color: #f67;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">减速动画</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	oBtn.onclick = function(){ 
+		clearInterval(timer);
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			/*
+			if (oBox.offsetLeft > 400) {
+				iSpeed = -7;
+			}else{
+				iSpeed = 7;
+			}
+			*/
+			iSpeed = (400-oBox.offsetLeft) / 10;
+			// console.log(oBox.offsetLeft,iSpeed);
+			//向上取整
+			iSpeed = Math.ceil(iSpeed);
+			// console.log(oBox.offsetLeft,iSpeed);
+			if (oBox.offsetLeft == 400) {
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpeed + 'px';
+			}
+		},30);
+	}
+</script>
+</html>

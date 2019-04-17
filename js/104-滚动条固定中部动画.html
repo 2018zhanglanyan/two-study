@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104-滚动条固定中部动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+		}
+		#box{
+			position: absolute;
+			right: 0px;
+			/*top: 0px;*/
+			width: 100px;
+			height: 100px;
+			background-color: gold;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	/*
+	 *	匀速动画封装函数
+	 *	第一个参数：{[object]} obj [DOM节点对象]
+	 *	第二个参数：{[String]} attr [属性名称]
+	 *	第三个参数：{[Number]} target [目标值]
+	 *
+	*/
+	
+	function animate(obj,attr,target){
+		//防止多次执行
+		clearInterval(obj.timer);
+		var iSpeed = 0;
+		obj.timer = setInterval(function(){
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			//透明度处理
+			if (attr == 'opacity') {
+				current = Math.round(current * 100);
+			}
+			//匀速动画处理速度
+			if (current > target) {
+				iSpeed = -10;
+			}else{
+				iSpeed = 10;
+			}
+			//匀速动画终止条件处理
+			if (Math.abs(target-current) < Math.abs(iSpeed)) {
+				if (attr == 'opacity') {
+					obj.style.opacity = target / 100;
+				}else{
+					obj.style[attr] = target + 'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if (attr == 'opacity') {
+					obj.style.opacity = (current + iSpeed) / 100;
+				}else{
+					obj.style[attr] = current + iSpeed + 'px';
+				}
+			}
+		},30);
+	}
+	var oBox = document.getElementById('box');
+	window.onload = window.onresize = window.onscroll = function(){
+		// oBox.style.top = (window.innerHeight - oBox.offsetHeight) / 2 + getScrollTop() + 'px';
+		var iTarget = (window.innerHeight - oBox.offsetHeight) / 2 + getScrollTop();
+		animate(oBox,'top',iTarget);
+	}
+</script>
+</html>

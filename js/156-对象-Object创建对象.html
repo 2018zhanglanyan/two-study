@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>156-对象-Object创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	/*
+	var obj = new Object();
+	obj.name = 'Tom';
+	obj.age = 18;
+	obj.sayHi = function(){
+		console.log(this.name + ' sayHello');
+	}
+	obj.sayHi();
+	console.log(obj);
+	*/
+	//缺点: Object是所有对象的父类 创建的对象方法和属性不能共用
+	var person = new Object();
+	person.name = "Tom";
+	person.age = 18;
+	person.sayHi = function(){
+		console.log('Hi');
+	}
+	console.log(person);
+
+	var person2 = new Object();
+	person2.name = "Leo";
+	person2.age = 12;
+	person2.sayHi = function(){
+		console.log('Hi');
+	}
+	console.log(person2);
+</script>
+</html>

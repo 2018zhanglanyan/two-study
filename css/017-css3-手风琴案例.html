@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-css3-手风琴案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 1000px;
+			height: 310px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			list-style: none;
+			overflow: hidden;
+		}
+		ul li{
+			float: left;
+			width: 200px;
+			height: 310px;
+			transition: all 0.5s;
+		}
+		ul li img{
+			width: 600px;
+			height: 100%;
+		}
+		ul:hover li{
+			width: 100px;
+		}
+		ul li:hover{
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="image/壁纸图片1.jpg"></li>
+		<li><img src="image/壁纸图片2.jpg"></li>
+		<li><img src="image/壁纸图片3.jpg"></li>
+		<li><img src="image/壁纸图片4.jpg"></li>
+		<li><img src="image/壁纸图片5.jpg"></li>
+	</ul>
+</body>
+</html>

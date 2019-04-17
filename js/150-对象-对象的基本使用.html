@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>150-对象-对象的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+		//属性  属性值
+		name:"Tom",
+		// name:"Liu", //属性无序 唯一
+		age:18,
+		friends:["Leo","Amy"],
+		//方法
+		sayHi:function(){
+			//函数属于谁    this就是谁
+			console.log('Hi I am ' + this.name);
+		}
+	}
+	console.log(obj);
+	//可获取属性值
+	console.log(obj.name);
+	//可修改属性值
+	obj.name = 'Leo';
+	console.log(obj.name);
+	console.log(obj);
+	//可添加属性
+	obj.sex = 'male';
+	console.log(obj);
+	obj.sayHi();
+</script>
+</html>

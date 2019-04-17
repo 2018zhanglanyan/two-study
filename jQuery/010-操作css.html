@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-操作css.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.div1{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.div2{
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">div1</div>
+	<div class="div2">div2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').css('width'));
+		console.log($('div').css('height'));
+
+		// console.log($('div').css('width','300px'));
+		// console.log($('div').css('height','300px'));
+
+		// console.log($('div').css('width','400px').css('height','400px'));
+
+		$('div').css({
+			width:300,
+			height:300
+		})
+
+	})
+</script>
+</html>

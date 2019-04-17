@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>059-父节点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #f67;
+			margin: 100px auto;
+		}
+		#son{
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oSon = document.getElementById('son');
+	console.log(oSon);
+	// parentNode  获取父元素
+	// oSon.parentNode.style.backgroundColor = 'yellow';
+	// console.log(oSon.parentNode);
+
+	// offsetParent  不会自动去找父元素   想要找到父元素要加 position:relative;
+	oSon.offsetParent.style.backgroundColor = 'yellow';
+	console.log(oSon.offsetParent);
+</script>
+</html>

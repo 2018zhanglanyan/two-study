@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>123-函数作为参数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	function show(name){
+		alert(name);
+	}
+	show('aa');
+	*/
+	/*
+	function sayHi(fn){
+		fn();
+	}
+	sayHi(function(){
+		alert('nnn');
+	});
+
+	*/
+	function num(n1,n2,fn){
+		var result = n1*10 + n2*10;
+		fn(result);
+	}
+	num(2,6,function(result){
+		alert(result);
+	});
+</script>
+</html>

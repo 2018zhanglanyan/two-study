@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-改变所有元素的样式.html</title>
+	<style>
+		li{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+		<li>hahaha</li>
+	</ul>
+</body>
+<script>
+	var aLi = document.getElementsByTagName('li');
+	console.log(aLi);
+	for(var i = 0; i < aLi.length; i++) {
+		aLi[i].style.background = 'pink';
+	}
+</script>
+</html>
