@@ -1,7 +1,16 @@
 
 import React,{ Component } from 'react'
-// react-redux 里面的connect方法负责把store里面的数据和方法映射到UI组件
+// 1.react-redux 里面的connect方法负责把store里面的数据和方法映射到UI组件
+// 2.因为connect来自于react-redux,而顶层的组件Provider(/src/index.js中的Provider)来自于react-redux,
+// 并且在Provider中指定了整个应用的store 所以,connect方法中能够拿到整个应用的state和dispatch方法
+// 3.connect会把state和dispatch传递给调用时的参数方法
 import { connect } from 'react-redux'
+
+// 1.引入login相关的action
+// 2.相当于引用'./store/index.js'中的actionCreator
+// 3.而'./store/indx.js'中的actionCreator是引入'./actionCreator.js'中的所有action的别名
+import { actionCreator } from './store'
+
 import axios from 'axios';
 import {
 	Form, Icon, Input, Button, message,
@@ -14,15 +23,19 @@ class NormalLoginForm extends Component {
 	constructor(props){
 		super(props);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		/*
 		this.state = {
 			isFething:false
 		}
+		*/
 	}
 	handleSubmit(e){	
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
+				this.props.handleLogin(values);
 				// console.log('Received values of form: ', values);
+				/*
 				this.setState(()=>({isFething:true}))
 				axios({
 					method:'post',
@@ -45,6 +58,7 @@ class NormalLoginForm extends Component {
 				.finally(()=>{
 					this.setState(()=>({isFething:false}))
 				})
+				*/
 			}
 		});
 	}
@@ -105,7 +119,14 @@ const mapStateToProps = (state)=>{
 // 4.返回对象的属性对应的值是一个方法
 const mapDispatchToProps = (dispatch)=>{
 	return {
-
+		handleLogin:(values)=>{
+			// 1.派发登录的action
+			// 2.其实这个登录的action是一个能够发送ajax请求的函数
+			// 3.dispatch能够派发函数是因为引用了redux-thunk
+			const action = actionCreator.getLoginAction(values);
+			dispatch(action)
+			// console.log('login...',values);
+		}
 	}
 }
 
