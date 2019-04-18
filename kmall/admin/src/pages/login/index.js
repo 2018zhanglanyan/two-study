@@ -23,11 +23,6 @@ class NormalLoginForm extends Component {
 	constructor(props){
 		super(props);
 		this.handleSubmit = this.handleSubmit.bind(this);
-		/*
-		this.state = {
-			isFething:false
-		}
-		*/
 	}
 	handleSubmit(e){	
 		e.preventDefault();
@@ -35,30 +30,6 @@ class NormalLoginForm extends Component {
 			if (!err) {
 				this.props.handleLogin(values);
 				// console.log('Received values of form: ', values);
-				/*
-				this.setState(()=>({isFething:true}))
-				axios({
-					method:'post',
-					url:'http://127.0.0.1:3000/admin/login',
-					data:values
-				})
-				.then(result=>{
-					// console.log(result);
-					if (result.data.code == 0) { // 登录成功
-						// 跳转到后台首页
-						window.location.href = "/"
-					}else if (result.data.code == 1) { // 登录失败
-						message.error(result.data.message)
-					}
-				})
-				.catch(err=>{
-					console.log(err);
-					message.error('网络请求失败,请稍后重试!')
-				})
-				.finally(()=>{
-					this.setState(()=>({isFething:false}))
-				})
-				*/
 			}
 		});
 	}
@@ -87,7 +58,7 @@ class NormalLoginForm extends Component {
 						type="primary" 
 						onClick={this.handleSubmit} 
 						className="login-form-button"
-						loading={this.props.isFething}
+						loading={this.props.isFetching}
 					>
 						登录
 					</Button>
@@ -109,7 +80,7 @@ const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLogin
 const mapStateToProps = (state)=>{
 	console.log(state);
 	return {
-		isFething:state.get('login').get('isFething')
+		isFetching:state.get('login').get('isFetching')
 	}
 }
 
@@ -123,6 +94,7 @@ const mapDispatchToProps = (dispatch)=>{
 			// 1.派发登录的action
 			// 2.其实这个登录的action是一个能够发送ajax请求的函数
 			// 3.dispatch能够派发函数是因为引用了redux-thunk
+			// 4.使用redux-thunk派发一个函数action的时候,会把dispatch方法自身传递到函数action中
 			const action = actionCreator.getLoginAction(values);
 			dispatch(action)
 			// console.log('login...',values);

@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // 引入Login组件
 // 等价于引入'./pages/login/index.js'
-import Login from './pages/login'
-import Home from './pages/home'
+import Login from 'pages/login'
+import Home from 'pages/home'
 
 import './App.css'
 
