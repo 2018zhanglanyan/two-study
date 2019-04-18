@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { message } from 'antd'
 
-import { request } from 'util';
+import { request,setUserName } from 'util';
 import { ADMIN_LOGIN } from 'api';
 
 const getLoginRequestAction = ()=>{
@@ -29,30 +29,7 @@ export const getLoginAction = (values)=>{
 		// 1.5相当于程序流程走到./reducer.js
 
 		dispatch(getLoginRequestAction());
-		/*
-		axios({
-			method:'post',
-			url:'http://127.0.0.1:3000/admin/login',
-			data:values
-		})
-		.then(result=>{
-			// console.log(result);
-			if (result.data.code == 0) { // 登录成功
-				// 跳转到后台首页
-				window.location.href = "/"
-			}else if (result.data.code == 1) { // 登录失败
-				message.error(result.data.message)
-			}
-		})
-		.catch(err=>{
-			console.log(err);
-			message.error('网络请求失败,请稍后重试!')
-		})
-		.finally(()=>{
-			// 2.让登录按钮处于活动状态
-			dispatch(getLoginDoneAction())
-		})
-		*/
+
 		request({
 			method:'post',
 			url:ADMIN_LOGIN,
@@ -61,6 +38,9 @@ export const getLoginAction = (values)=>{
 		.then(result=>{
 			// console.log('1:::',result);
 			if (result.code == 0) { // 登录成功
+				// console.log(result.data);
+				// 把用户名保存到本地
+				setUserName(result.data.username);
 				// 跳转到后台首页
 				window.location.href = "/"
 			}else if (result.code == 1) { // 登录失败
@@ -77,5 +57,4 @@ export const getLoginAction = (values)=>{
 		})
 	}
 }
-
 

@@ -18,3 +18,17 @@ export const request = (options)=>{
 		})
 	})
 }
+
+
+
+export const setUserName = (username)=>{
+	window.localStorage.setItem('username',username);
+}
+
+export const getUserName = ()=>{
+	return window.localStorage.getItem('username');
+}
+
+export const removeUserName = ()=>{
+	window.localStorage.removeItem('username');
+}

@@ -7,15 +7,27 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from 'pages/login'
 import Home from 'pages/home'
 
+import { getUserName } from 'util'
+
 import './App.css'
 
 class App extends Component{
 
 	render(){
+		const ProtectRoute = ()=>(
+			<Route 
+				{...rest}
+				render={(props)=>{
+					getUserName()
+					? <Component {...props} />
+					: <Redirect to="/login" />
+				}}
+			/>
+		)
 		return(
 			<Router>
 				<div className="App">
-					<Route exact path="/" component={Home} />
+					<ProtectRoute exact path="/" component={Home} />
 					{
 						// 当匹配到路由"login"后,渲染Login组件
 					}
