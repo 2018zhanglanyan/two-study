@@ -2,21 +2,39 @@
 import React,{ Component } from 'react'
 
 import {
-  Layout, Menu, Breadcrumb, Dropdown, Icon
+  Layout, Menu, Dropdown, Icon
 } from 'antd';
 
-import { getUserName } from 'util'
+import { getUserName,request,removeUserName } from 'util'
+import { USER_LOGOUT } from 'api'
 
 import './index.css'
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Header } = Layout;
 
 
 class AdminHeader extends Component{
+	constructor(props){
+		super(props);
+		this.handleLogout = this.handleLogout.bind(this);
+	}
+	handleLogout(){
+		request({
+			url:USER_LOGOUT
+		})
+		.then(result=>{
+			// 退出成功
+			if (result.code == 0) {
+				// 1.清楚本地存储的用户信息
+				removeUserName()
+				// 2.页面跳转到登录页面
+				window.location.href = "/login"
+			}
+		})
+	}
 	render(){
 		const menu = (
-			<Menu>
+			<Menu onClick={this.handleLogout}>
 				<Menu.Item key="0">
 					<Icon type="logout" />退出
 				</Menu.Item>

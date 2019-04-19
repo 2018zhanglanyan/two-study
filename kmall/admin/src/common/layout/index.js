@@ -2,7 +2,7 @@
 import React,{ Component } from 'react'
 
 import {
-  Layout, Menu, Breadcrumb, Icon,
+  Layout, Menu , Icon,
 } from 'antd';
 
 const { SubMenu } = Menu;
@@ -24,7 +24,7 @@ class AdminLayout extends Component{
 								background: '#fff', padding: 24, margin: 0, minHeight: 280,
 								}}
 								>
-								Content
+									{this.props.children}
 							</Content>
 						</Layout>
 				   </Layout>

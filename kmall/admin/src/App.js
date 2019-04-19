@@ -6,6 +6,7 @@ import { BrowserRouter as Router,Route,Redirect,Switch } from 'react-router-dom'
 // 等价于引入'./pages/login/index.js'
 import Login from 'pages/login'
 import Home from 'pages/home'
+import User from 'pages/user'
 
 import { getUserName } from 'util'
 
@@ -41,6 +42,7 @@ class App extends Component{
 							// 当匹配到路由"login"后,渲染Login组件
 						}
 						<LoginRoute path="/login" component={Login} />
+						<ProtectRoute path="/user" component={User} />
 					</Switch>
 				</div>
 			</Router>
