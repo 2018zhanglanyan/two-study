@@ -1,0 +1,15 @@
+
+.AdminHeader .logo{
+	width: 200px;
+	float: left;
+	color: #fff;
+	font-weight: 600;
+	font-size: 28px;
+}
+
+.AdminHeader .ant-dropdown-link{
+	float: right;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+}
