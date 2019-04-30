@@ -6,7 +6,8 @@ export const request = (options)=>{
 		const params = {
 			method:options.method || 'get',
 			url:options.url || '',
-			data:options.data || ''
+			data:options.data || '',
+			withCredentials:true
 		}
 		axios(params)
 		.then(result=>{

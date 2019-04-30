@@ -3,10 +3,14 @@ import React,{ Component } from 'react'
 import { connect } from 'react-redux'
 
 import { Card, Col, Row } from 'antd'
+import{ actionCreator } from './store'
 
 import Layout from 'common/layout'
 
 class Home extends Component{
+	componentDidMount(){
+		this.props.handleCount()
+	}
 	render(){
 		const {usernum,productnum,ordernum} = this.props
 		return (
@@ -39,7 +43,10 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
 	return {
-
+		handleCount:()=>{
+			const action = actionCreator.getCountAction()
+			dispatch(action)
+		}
 	}
 }
 

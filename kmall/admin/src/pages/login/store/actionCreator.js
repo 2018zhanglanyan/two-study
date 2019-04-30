@@ -1,6 +1,5 @@
 
 import * as types from './actionTypes.js'
-import axios from 'axios';
 
 import { message } from 'antd'
 
